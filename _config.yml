@@ -27,6 +27,12 @@ github_username:  AdamKostrzewa
 # Build settings
 markdown: kramdown
 theme: minima
+# Disqus Comments
+disqus:
+    # Leave shortname blank to disable comments site-wide.
+    # Disable comments for any post by adding comments false to that posts YAML Front Matter.
+    shortname: https-adamkostrzewa-github-io
+
 plugins:
   - jekyll-feed
   
