@@ -33,3 +33,5 @@ TCP–32764 in linksys WAG200G”. Dostępna pod adresem [https://github.com/elv
 [3] Dan Luu: „CPU Backdoors” 2015. Dostępna pod adresem [https://danluu.com/cpu–backdoors/](https://danluu.com/cpu-backdoors/)
 [Online 06.02.2017]  
 
+
+<iframe src="https://drive.google.com/file/d/1NO5WJHJpNHnHR0TwdDY-G9h11YgClxFS/preview" width="100%" height="1000"></iframe>
