@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[PL] Troany sprz Backdoor PWNING2017"
-date:   2018-05-26 14:28:00 +0200
+title:  "[PL] Trojany sprzetowe - uzupełnienie Confidence 2018"
+date:   2018-05-16 14:28:00 +0200
 categories: jekyll update
 ---
 Artykuł ktróry jest uzupełnieniem prezentacji "Who and why should fear hardware trojans?" z konferencji Confidence 2018 w Krakowie.
