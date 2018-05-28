@@ -13,4 +13,4 @@ Czy można ufać naszym procesorom, routerom, kartom pamięci? Wielu specjalist�
 Czy jest zatem powód do obaw? Czy sprzęt od dużego dostawcy jest bezpieczny? Na czym polega zagrożenie stwarzane przez trojany sprzętowe i czy warto bliżej zapoznać się z tematem?  W tym krótkim tekście postaramy się odpowiedzieć na te pytania. 
 
 
-<iframe src="https://drive.google.com/file/d/1F3yHG8yB3ua2-s09K9DtplSXw3ZvCewD/preview" width="640" height="480"></iframe>
+<iframe src="https://drive.google.com/file/d/1F3yHG8yB3ua2-s09K9DtplSXw3ZvCewD/preview" width="100%" height="1000"></iframe>
