@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[PL] CPU Backdoor PWNING2017"
-date:   2018-05-28 14:38:12 +0200
+date:   2018-05-02 12:38:12 +0200
 categories: jekyll update
 ---
 Artykuł ktróry został opublikowany jako materiał towarzyszący konferencji PWNING 2017 w Warszawie.
