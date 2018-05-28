@@ -5,7 +5,7 @@ date:   2018-05-28 14:38:12 +0200
 categories: jekyll update
 ---
 Artykuł ktróry został opublikowany jako materiał towarzyszący konferencji PWNING 2017 w Warszawie.
-Całość w PDF: [Pobierz plik]({{ site.url }}/download/Segregator1.pdf) 
+Całość w PDF: [Pobierz plik](/download/Segregator1.pdf) 
 
 Streszczenie:
 Backdoor to metoda ominięcia mechanizmów bezpieczeństwa wykorzystująca podatność w systemie lub sprzęcie.
