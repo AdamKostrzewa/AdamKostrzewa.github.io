@@ -27,8 +27,9 @@ jak zaprojektować podatność, a następnie, jak ją wykorzystać, i przy użyc
 Ostatecznie przenalizujemy możliwe warianty implementacji pod kątem łatwości wykrycia, potrzebnych zasobów, a także wydajności.
 
 [1] Sergiei Skorbogatov: „Hardware Assurance and its importance to National Security”. 
-Dostępna pod adresem http://www.cl.cam.ac.uk/~sps32/sec_news.html#Assurance [Online 06.08.2017],
+Dostępna pod adresem [http://www.cl.cam.ac.uk/~sps32/sec_news.html#Assurance](http://www.cl.cam.ac.uk/~sps32/sec_news.html#Assurance) [Online 06.08.2017],  
 [2] Eloi Vanderbeken: „Some codes and notes about the backdoor listening on
-TCP–32764 in linksys WAG200G”. Dostępna pod adresem https://github.com/elvanderb/TCP–32764 [Online.06.08.2017],
-[3] Dan Luu: „CPU Backdoors” 2015. Dostępna pod adresem https://danluu.com/cpu–backdoors/ [Online 06.02.2017]
+TCP–32764 in linksys WAG200G”. Dostępna pod adresem [https://github.com/elvanderb/TCP–32764](https://github.com/elvanderb/TCP–32764) [Online.06.08.2017],  
+[3] Dan Luu: „CPU Backdoors” 2015. Dostępna pod adresem [https://danluu.com/cpu–backdoors/](https://danluu.com/cpu-backdoors/)
+[Online 06.02.2017]  
 
