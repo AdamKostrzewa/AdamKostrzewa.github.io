@@ -23,6 +23,8 @@ permalink: /about_pl/
 Jeśli masz pytania lub wątpliwości dotyczące prezentowanej treści, zachęcam do zostawienia komentarza lub 
 kontaktu za pośrednictwem poczty elektronicznej.
 
-Moja praca magisterska "Development of a man in the middle attack on the GSM Um-Interface" : [Pobierz plik](/download/kostrzewa2011development.pdf) 
+Moja praca magisterska "Development of a man in the middle attack on the GSM Um-Interface" : 
+
+[Pobierz plik](/download/kostrzewa2011development.pdf) 
 
 
