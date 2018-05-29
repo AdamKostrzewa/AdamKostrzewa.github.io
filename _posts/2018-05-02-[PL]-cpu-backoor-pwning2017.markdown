@@ -5,7 +5,9 @@ date:   2018-05-02 12:38:12 +0200
 categories: jekyll update
 ---
 Artykuł ktróry został opublikowany jako materiał towarzyszący konferencji PWNING 2017 w Warszawie.
+
 **Całość w PDF**: [Pobierz plik](/download/Segregator1.pdf) 
+
 **Strona konferencji** : [PWNing2017](https://www.instytutpwn.pl/konferencja/pwning2017/)
 
 **Streszczenie:**
