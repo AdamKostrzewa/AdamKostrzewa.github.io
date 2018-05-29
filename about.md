@@ -16,3 +16,6 @@ permalink: /about/
 * security in GSM networks
 
 If you have questions or doubts regarding the presented content feel free to leave a comment or conntact me per email.
+
+My master thesis "Development of a man in the middle attack
+on the GSM Um-Interface" : [Download pdf file](/download/kostrzewa2011development.pdf) 
