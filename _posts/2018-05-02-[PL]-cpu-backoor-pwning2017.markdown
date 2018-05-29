@@ -1,13 +1,14 @@
 ---
 layout: post
-title:  "[PL] CPU Backdoor PWNING2017"
+title:  "[PL] CPU Backdoor PWNing Conference 2017, Warszawa "
 date:   2018-05-02 12:38:12 +0200
 categories: jekyll update
 ---
 Artykuł ktróry został opublikowany jako materiał towarzyszący konferencji PWNING 2017 w Warszawie.
-Całość w PDF: [Pobierz plik](/download/Segregator1.pdf) 
+**Całość w PDF**: [Pobierz plik](/download/Segregator1.pdf) 
+**Strona konferencji** : [PWNing2017](https://www.instytutpwn.pl/konferencja/pwning2017/)
 
-Streszczenie:
+**Streszczenie:**
 Backdoor to metoda ominięcia mechanizmów bezpieczeństwa wykorzystująca podatność w systemie lub sprzęcie.
 Od dawna dyskutuje się na temat możliwości celowej implementacji podatności sprzętowych w produktach komercyjnych, 
 np. komputerach typu mainframe, routerach czy procesorach desktopowych [3] pozwalających na łatwą implementację backdoora. 
@@ -26,12 +27,8 @@ Dyskusję zaczniemy od przedstawienia mechanizmów bezpieczeństwa wbudowanych w
 jak zaprojektować podatność, a następnie, jak ją wykorzystać, i przy użyciu prostego exploita, napisanego dla systemu Linux, uzyskać backdoor. 
 Ostatecznie przenalizujemy możliwe warianty implementacji pod kątem łatwości wykrycia, potrzebnych zasobów, a także wydajności.
 
-[1] Sergiei Skorbogatov: „Hardware Assurance and its importance to National Security”. 
-Dostępna pod adresem [http://www.cl.cam.ac.uk/~sps32/sec_news.html#Assurance](http://www.cl.cam.ac.uk/~sps32/sec_news.html#Assurance) [Online 06.08.2017],  
-[2] Eloi Vanderbeken: „Some codes and notes about the backdoor listening on
-TCP–32764 in linksys WAG200G”. Dostępna pod adresem [https://github.com/elvanderb/TCP–32764](https://github.com/elvanderb/TCP–32764) [Online.06.08.2017],  
-[3] Dan Luu: „CPU Backdoors” 2015. Dostępna pod adresem [https://danluu.com/cpu–backdoors/](https://danluu.com/cpu-backdoors/)
-[Online 06.02.2017]  
-
+* [1] Sergiei Skorbogatov: „Hardware Assurance and its importance to National Security”. Dostępna pod adresem [http://www.cl.cam.ac.uk/~sps32/sec_news.html#Assurance](http://www.cl.cam.ac.uk/~sps32/sec_news.html#Assurance) [Online 06.08.2017],  
+* [2] Eloi Vanderbeken: „Some codes and notes about the backdoor listening on TCP–32764 in linksys WAG200G”. Dostępna pod adresem [https://github.com/elvanderb/TCP–32764](https://github.com/elvanderb/TCP–32764) [Online.06.08.2017],  
+* [3] Dan Luu: „CPU Backdoors” 2015. Dostępna pod adresem [https://danluu.com/cpu–backdoors/](https://danluu.com/cpu-backdoors/) [Online 06.02.2017]  
 
 <iframe src="https://drive.google.com/file/d/1NO5WJHJpNHnHR0TwdDY-G9h11YgClxFS/preview" width="100%" height="1000"></iframe>
