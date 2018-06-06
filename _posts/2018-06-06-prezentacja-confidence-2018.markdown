@@ -8,6 +8,9 @@ Below you may find my presentation from the Confidence 2018.
 Feel free to contact me if you have any questions or doubts 
 PDF for download: [Downlad](/download/hw_trojan_confidence.pdf) 
 
+<iframe src="https://drive.google.com/file/d/1JJSzVqXpQqxiF6qqSfLD9DiNOvKGRYMq/preview" width="1000" height="580"></iframe>
+
+
 Abstract:
 Can we trust our processors, routers and other electronic IP components? 
 This important question is often left unanswered. Due to the high production complexity and costs of very-large-scale integration (VLSI) 
@@ -37,4 +40,3 @@ that weaken or compromise the security of the systems. Besides theoretical backg
  parts of corporate and national security policies.
 
 
-<iframe src="https://drive.google.com/file/d/1JJSzVqXpQqxiF6qqSfLD9DiNOvKGRYMq/preview" width="1000" height="580"></iframe>
