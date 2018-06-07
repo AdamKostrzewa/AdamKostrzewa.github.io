@@ -5,13 +5,16 @@ date:   2018-06-06 08:38:12 +0200
 categories: jekyll update
 ---
 Below you may find my presentation from the Confidence 2018.
-Feel free to contact me if you have any questions or doubts 
+Feel free to contact me if you have any questions or doubts   
+
 PDF for download: [Downlad](/download/hw_trojan_confidence.pdf) 
 
 <iframe src="https://drive.google.com/file/d/1JJSzVqXpQqxiF6qqSfLD9DiNOvKGRYMq/preview" width="1000" height="500"></iframe>
 
+  
 
 **Abstract**:
+
 Can we trust our processors, routers and other electronic IP components? 
 This important question is often left unanswered. Due to the high production complexity and costs of very-large-scale integration (VLSI) 
 resulting from contemporary transistor designs, the majority of regular users have little to no choice when selecting hardware 
