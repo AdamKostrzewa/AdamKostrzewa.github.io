@@ -1,4 +1,3 @@
-% !TeX spellcheck = pl_PL
 ---
 layout: post
 title:  "[PL] Modele Ataku Trojanów Sprzętowych"
