@@ -15,8 +15,10 @@ comments: true
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
   </header>
-
+	
   <div class="post-content e-content" itemprop="articleBody">
+    {% include share-bar.html %}
+    <br />
     {{ content }}
   </div>
 
