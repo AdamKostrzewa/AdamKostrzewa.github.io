@@ -1,3 +1,4 @@
+% !TeX spellcheck = pl_PL
 ---
 layout: post
 title:  "[PL] Modele Ataku Trojanów Sprzętowych"
@@ -7,12 +8,12 @@ categories: jekyll update
 
 Do napisania tego tekstu skłoniły mnie komentarze i dyskusje odbyte na Confidence 2018.
 
-Wiekszość z nich dotyczyła dwóch tematów / problemów:
+Większość z nich dotyczyła dwóch tematów / problemów:
 
 1. jak wyglądałby atak przeprowadzony profesjonalnie?
 2. jak bardzo realistyczny jest atak poprzez ingerencje w układ scalony?
 
-Pytania przedyskutuje w tej właśnie kolejności. Modele ataku związane z trojanami w układach scalonych są sciśle związane z łańcuchem dostawców i wykonwców w procesie produkcji krzemu. Obecnie w mikroelektronice stosuje się tzw. foundry model (ang. model odlewni) polegający na oddzieleniu produkcji chipów (krzemu) od projektowania układów scalonych. Prace te wykonywane są przez osobne firmy bądź jednostki biznesowe wewnątrz tej samej organizacji. Model ten bierze nazwe od analogicznego procesu w przemyśle samochodwym (i ciężkim) gdzie projektowanie pojazdu (maszyny) jest wykonywane przez inne firmy i instytucje niż huty stali i odlewnie. Czasami jednak bardzo duży koncern samochowy może pozwolić sobie na zakup huty. Analogią w świecie elektroniki będzie np. Intel który zarówno projektuje jak i produkuje układy scalone.
+Pytania przedyskutuje w tej właśnie kolejności. Modele ataku związane z trojanami w układach scalonych są ściśle związane z łańcuchem dostawców i wykonawców w procesie produkcji krzemu. Obecnie w mikroelektronice stosuje się tzw. foundry model (ang. model odlewni) polegający na oddzieleniu produkcji chipów (krzemu) od projektowania układów scalonych. Prace te wykonywane są przez osobne firmy bądź jednostki biznesowe wewnątrz tej samej organizacji. Model ten bierze nazwę od analogicznego procesu w przemyśle samochodowym (i ciężkim) gdzie projektowanie pojazdu (maszyny) jest wykonywane przez inne firmy i instytucje niż huty stali i odlewnie. Czasami jednak bardzo duży koncern samochodowy może pozwolić sobie na zakup huty. Analogią w świecie elektroniki będzie np. Intel, który zarówno projektuje jak i produkuje układy scalone.
 
 Firmy bez produkcji krzemu (fabless),  dane na rok 2017 na podstawie raport IC Insights, źródło https://www.design-reuse.com/news/43336/2017-top-10-fabless-system-ic-companies.html.
 
@@ -29,7 +30,7 @@ Firmy bez produkcji krzemu (fabless),  dane na rok 2017 na podstawie raport IC I
 | 9       | Marvell       | USA      |
 | 10      | Unigroup      | Chiny    |
 
-Firmy produkjące krzem (foundries), dane z https://www.electronicsweekly.com/news/business/top-ten-foundries-2017-2017-12/
+Firmy produkujące krzem (foundries), dane z https://www.electronicsweekly.com/news/business/top-ten-foundries-2017-2017-12/
 
 
 
@@ -48,11 +49,11 @@ Firmy produkjące krzem (foundries), dane z https://www.electronicsweekly.com/ne
 
 
 
-Model odlewni prowadzi do podziału firm produjących elektronikę na takie które posiadają możliwości produkcji krzemu i takie które muszą je zlecać podwykonawcom. W tabelkach zestawienie największych firm z obu kategorii. O ile te firmy które nie produkują krzemu są w większości dobrze rozpoznawalne to te które produkują są w wiekszości nie znane. Jest to analogiczne do sytuacji na rynku smochodów gdzie rozpoznajemy marki pojazdów ale nie huty stali badź odlewnie gdzie części zostały fizycznie wykonane.
+Model odlewni prowadzi do podziału firm produkujących elektronikę na takie, które mają możliwości produkcji krzemu i takie, które wykonanie krzemu muszą zlecać podwykonawcom. W tabelkach zestawienie największych firm z obu kategorii. O ile te firmy, które nie produkują krzemu są w większości dobrze rozpoznawalne to te które produkują są w wiekszości nieznane. Jest to analogiczne do sytuacji na rynku smochodów gdzie rozpoznajemy marki pojazdów ale nie huty stali badź odlewnie gdzie części zostały fizycznie wykonane.
 
-W mikrolektronice prowadzi to do wyszczególnienia następujących podmiotów w procesie produkcyjnym:
+W mikroelektronice prowadzi to do wyszczególnienia następujących podmiotów w procesie produkcyjnym:
 
-1. dostawca IP (ang. 3PIP 3rd party IP provider) - firma produkująca konkretne elmenty układu np. sterowniki pamięci, szyny danych, sieci na chipe, interfejsy etc. Analogią softwarową jest dostawca bibliotek np. silnika graficznego, API, bądź kompresji. 
+1. dostawca IP (ang. 3PIP 3rd party IP provider) - firma produkująca konkretne elementy układu np. sterowniki pamięci, szyny danych, sieci na chipe, interfejsy etc. Analogią softwarową jest dostawca bibliotek np. silnika graficznego, API, bądź kompresji. 
 2. deweloper systemu (ang. SoC designer) - firma integrująca elementy w jeden system, często posiada również własną produkcję komponentów IP. 
 3. silicon foundry (ang. odlewnia krzemu) - firma odpowiedzialna za proces produkucji krzemu
 
@@ -72,11 +73,11 @@ Opis poszczególnych modeli ataku:
 
 1. niezaufany dostawca  - w większości systemów komponenty pochodzą od różnych dostawców np. interfejsy USB, interfejsy sieciowe  bądź pamięci i procesory. Jeśli nie mamy kontroli nad ich procesem projektowania to dostajemy produkt którego zasad działania nie znamy (typu closed source). W konsekwencji wiemy co robi ale nie jak
 2. niezaufany integrator - wprowadzenie trojana na poziomie syntezy układów scalonych i / bądź poprzez integracje i łaczenie elementów
-3. niezaufane foundry  - większość firm proukujących elektronikę nie ma technologi wykonania krzemu tyn. zleca to innym firmom. Prowadzi to do utraty kontroli nad końcowym etapem produkcji czyli trawieniem wafli krzemowych (zmiana masek, nieprawidłow działające tranyzstory), więcej [Trojany Dopingowe](https://www.emsec.rub.de/media/crypto/veroeffentlichungen/2015/03/19/beckerStealthyExtended.pdf)
+3. niezaufane foundry — większość firm produkujących elektronikę nie ma technologi wykonania krzemu tyn. zleca to innym firmom. Prowadzi to do utraty kontroli nad końcowym etapem produkcji czyli trawieniem wafli krzemowych (zmiana masek, nieprawidłowo działające tranzystory), więcej [Trojany Dopingowe](https://www.emsec.rub.de/media/crypto/veroeffentlichungen/2015/03/19/beckerStealthyExtended.pdf)
 4. produkt dostępny komercyjnie  - tutaj jako klient mamy dostęp tylko dostęp do gotowego prouktu. Wprowadzenie trojana może nastąpić na każdym etapie produkcji a jego wykrycie jest kosztowne i trudne, więcej [Prezentacja Confidence 2018 ](https://adamkostrzewa.github.io/jekyll/update/2018/06/06/prezentacja-confidence-2018.html)
 5. niezaufane biuro projektowe - firma posiada kontrolę nad procesem produkcji krzemu jednak modyfikacja może nastąpić w procesie projektowania komponentów bądź integracji systemu 
-6. biuro projektowe bez produkcji krzemu - integrator nie ma kontroli nad częścią komponentów projektwanego systemu jak i procesem produkcji krzemu, ta sytuacja dotyczy większości firm działających na rynku
-7. niezaufany dostawca używający zaufanych komponentów - dostawca komponentów (np. bibliotek HDL) może stracić kontrole nad własnym produktem na etapie integracji bądź produkcji krzemu. Sytuacja trudna bo by udowodnić swoją niewinność musi ujawnić źródła produktu / kompnentu.
+6. biuro projektowe bez produkcji krzemu - integrator nie ma kontroli nad częścią komponentów projektowanego systemu, jak i procesem produkcji krzemu, ta sytuacja dotyczy większości firm działających na rynku
+7. niezaufany dostawca używający zaufanych komponentów - dostawca komponentów (np. bibliotek HDL) może stracić kontrole nad własnym produktem na etapie integracji bądź produkcji krzemu. Sytuacja trudna, bo by udowodnić swoją niewinność musi ujawnić źródła produktu / komponentu.
 
 
 
