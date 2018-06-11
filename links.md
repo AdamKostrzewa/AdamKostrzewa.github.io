@@ -1,6 +1,7 @@
 ---
 layout: post
 title: (HW Sources)
+image: /download/z80_circuit.jpg
 permalink: /linki/
 ---
 
