@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "[PL] Linki do materiałów o HW security i nie tylko!"
+date:   2018-06-11 08:38:12 +0200
+categories: jekyll update
+---
+
+Na stronie pojawia się sekcja : 
+## -->  [HW Sources](/linki/) <-- ##
+
+W tej sekcji przedstawiam wybrane link do ciekawych prezentacji, wykładów i tutoriali o tematyce hardware hacking, elektronika cyfrowa i architektura komputerów. 
+Lista powiększy się o low-level programming i OS programming (kernel hacking).
+
+Jeśli jesteś zainteresowany sprzętem bądź chcesz przynajmniej sprawdzić o co chodzi 
+by być na bieżąco to są materiały dla Ciebie!
+
+**UWAGA Lista rozwija się!**
+
+**Twój wkład też się liczy!** - widziałeś coś ciekawego, wrzuć link w komentarzu!
+
+Jeśli materiał jest ciekawy podziel się - sharing is caring! :)
+
