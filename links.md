@@ -3,6 +3,9 @@ layout: post
 title: (HW Sources)
 permalink: /linki/
 ---
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta property="og:image" content="images/startcrowdimage.jpg">
     
 W tej sekcji przedstawiam wybrane link do ciekawych prezentacji, wykładów i tutoriali o tematyce hardware hacking, elektronika cyfrowa i architektura komputerów. 
 Lista powiększy się o low-level programming i OS programming (kernel hacking).
