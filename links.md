@@ -42,8 +42,11 @@ Jeśli jest ciekawy podziel się - *sharing is caring!* :)
 myszek, klawiatur etc.  
 prezentacja w pdfie [link do slajdów](https://www.blackhat.com/docs/asia-14/materials/Dunning/Asia-14-Dunning-Building-Trojan-Hardware-At-Home.pdf)  
 i wideo z konferencji BlackHat 2014 [link do yt](https://www.youtube.com/watch?v=QJ4KZ8vlo4g)  
+* Samy Kamkar's Crash Course in How to Be a Hardware Hacker [link do wideo](https://www.youtube.com/watch?v=tlwXmNnXeSY)
   
 temat będzie na blogu ale jeśli jesteście zainteresowani piszcie!
+
+
 
 **Trojany Hardwarowe**
 
