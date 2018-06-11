@@ -11,9 +11,9 @@ permalink: /linki/
 <meta name="twitter:title"   content="{{ page.title }}">
 
 {% if page.summary %}
-<meta name="twitter:description" content="{{ page.summary }}">
+<meta name="twitter:description" content="wybrane link do ciekawych prezentacji i wykładów o tematyce hardware hacking i architektura komputerów">
 {% else %}
-<meta name="twitter:description" content="{{ site.description }}">
+<meta name="twitter:description" content="wybrane link do ciekawych prezentacji i wykładów o tematyce hardware hacking i architektura komputerów">
 {% endif %}
 
 {% if page.image %}
