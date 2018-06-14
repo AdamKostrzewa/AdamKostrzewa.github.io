@@ -47,8 +47,8 @@ strukturę krzemu bądź zanieczyszczenia w powietrzu (słynne cleanroomy) zazwy
 
 ![DRAM and SRAM yield](/download/better_yield.jpg)
 
-Zauważmy że zakładając niej więcej stałą średnicę wafla, ilość układów można skalować również poprzez technologię produkcji np. proces naświetlania. Jeśli układ jest wykonany w technologi 10nm to może pomieścić mniej więcej dwa razy więcej tranzystorów na tej samej powierzchni.
-Ciekawym przykładem jest firma Intel która tak naprawdę w pierwszej kolejności zajmuje się produkcją krzemu a w drugiej (mówiąc kolokwialnie na boku) produkcją procesorów. To tak jakby huta stali robiła samochody. Strategia Intela do niedawna była prosta -gdy technicznie dogania ją konkurencja (projekt układu) oni obniżają technologię i mogą albo sprzedawać taniej albo proponować bardziej zaawansowane (a często i szybsze układy).
+Zauważmy że zakładając niej więcej stałą średnicę wafla, ilość układów można skalować również poprzez technologię produkcji np. proces naświetlania. Jeśli układ jest wykonany w technologi 10nm to może pomieścić mniej więcej dwa razy więcej tranzystorów na tej samej powierzchni niż układ wykonany w technologii 22 nm.
+Ciekawym przykładem jest firma Intel która tak naprawdę w pierwszej kolejności zajmuje się  produkcją krzemu (procesy, technologia, maszyny) a w drugiej (mówiąc kolokwialnie "na boku") produkcją procesorów (architektura i logika).  To tak jakby huta stali robiła samochody. Strategia Intela do niedawna była prosta -gdy technicznie dogania ją konkurencja (projekt układu) oni wprowadzają nową technologię produkcji krzemu i mogą albo sprzedawać taniej albo proponować bardziej zaawansowane (a często i szybsze) układy. Niestety krzem jako materiał też ma swoje ograniczenia i 10nm nie jest już tak łatwo wprowadzić - [Artzkuł o 10nm i Intelu](https://www.tomshardware.com/news/intel-cpu-10nm-earnings-amd,36967.html).
 
 Oczywiście dodatkowo trzeba zapłacić za testy chipów i ich pakowanie. Tutaj koszty są wprost proporcjonalne do ilości układów.
 
