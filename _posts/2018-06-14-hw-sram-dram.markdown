@@ -52,7 +52,7 @@ Ciekawym przykładem jest firma Intel która tak naprawdę w pierwszej kolejnoś
 
 Oczywiście dodatkowo trzeba zapłacić za testy chipów i ich pakowanie. Tutaj koszty są wprost proporcjonalne do ilości układów.
 
-Dla zainteresowanych w tabelkach przykładowe koszty wykonania na podstawie danych firmy Adapteva i uniwersytetu Bar-Ilan z Izraela. Dane z roku 2014. 
+Dla zainteresowanych w tabelkach przykładowe koszty wykonania na podstawie danych firmy Adapteva i uniwersytetu Bar-Ilan z Izraela zródło [Adapteva](http://www.adapteva.com/). Dane z roku 2014. 
 
 Tabela 1: Koszty jednorazowe projektowania układu scalonego.
 
