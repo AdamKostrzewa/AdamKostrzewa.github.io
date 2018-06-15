@@ -41,8 +41,7 @@ plugins:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-exclude:
-	- google82ccaa9a1e5c8438.html
+#exclude:
 #   - Gemfile
 #   - Gemfile.lock
 #   - node_modules
