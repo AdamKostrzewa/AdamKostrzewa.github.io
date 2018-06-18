@@ -20,11 +20,12 @@ permalink: /about_pl/
 * bezpieczeństwo układów i systemów wbudowanych
 * bezpieczeństwo w sieciach GSM
 
-Jeśli masz pytania lub wątpliwości dotyczące prezentowanej treści, zachęcam do zostawienia komentarza lub 
-kontaktu za pośrednictwem poczty elektronicznej.
+Jeśli masz pytania lub wątpliwości dotyczące prezentowanej treści, 
+zachęcam do zostawienia komentarza lub kontaktu za pośrednictwem poczty elektronicznej.
 
-Moja praca magisterska "Development of a man in the middle attack on the GSM Um-Interface" : 
-
-[Pobierz plik](/download/kostrzewa2011development.pdf) 
+**Artykuły, publikacje, prelekcje i inne aktywności:**
+* Confidence 2018, Kraków - Who and why should fear HW trojans? [Pobierz plik](/download/hw_trojan_confidence.pdf) 
+* PWNing 2017, Warszawa - CPU BACKDOOR – CZYLI PO CO WYWAŻAĆ OTWARTE DRZWI? [Pobierz plik](/download/Segregator1.pdf) 
+* Development of a man in the middle attack on the GSM Um-Interface [Pobierz plik](/download/kostrzewa2011development.pdf) 
 
 
