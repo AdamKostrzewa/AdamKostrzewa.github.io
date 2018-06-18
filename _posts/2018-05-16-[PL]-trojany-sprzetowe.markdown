@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "[PL] Trojany sprzetowe - uzupełnienie Confidence 2018"
+title:  "[PL] Trojany sprzetowe"
 date:   2018-05-16 14:28:00 +0200
 categories: jekyll update
 ---
-Artykuł ktróry jest uzupełnieniem prezentacji "Who and why should fear hardware trojans?" z konferencji Confidence 2018 w Krakowie.
+
 Całość w PDF: [Pobierz plik](/download/trojany_sprzetowe.pdf) 
 
 <iframe src="https://drive.google.com/file/d/1F3yHG8yB3ua2-s09K9DtplSXw3ZvCewD/preview" width="100%" height="1000"></iframe>

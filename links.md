@@ -46,6 +46,10 @@ i wideo z konferencji BlackHat 2014 [link do yt](https://www.youtube.com/watch?v
   
 temat będzie na blogu ale jeśli jesteście zainteresowani piszcie!
 
+**Klasyka**
+* [AT&T Archives: The UNIX Operating System](https://www.youtube.com/watch?v=tc4ROCJYbm0) - z archiwów firmy AT&T, twórcz UNIXa
+opowiadają o początkach systemu i jego zasadach działania. Wywiady z głównymi deweloperami  - między innymi Ritchie, Thompson, Brian Kernighan, i wielu innych.
+Nikt nie tłumaczy lepiej idei stojących za mechanizmami systemu niż jego twórcy. 
 
 
 **Trojany Hardwarowe**
@@ -56,6 +60,7 @@ wideo z konferencji RuhrSec 2017: "How to Build Hardware Trojans" [link](https:/
 
 * Demonstration of Hardware Trojans wideo z konferencji Defcon 16 [link](https://www.youtube.com/watch?v=QGIKhJrb9aA)
 
+* [Podsumowanie Dana Luu na temat CPU backdoors](https://www.youtube.com/watch?v=tc4ROCJYbm0) - zbiór linków (niestety nie aktualizowany) do materiałów o backdoach w CPU.
 
 **Rewers Krzemu**
 
