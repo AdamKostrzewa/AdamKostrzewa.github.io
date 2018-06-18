@@ -19,8 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   My technical blog presenting all aspects of security in embedded design.
   It presents the results of my private research.
   Feel free to participate in the discussion by leaving a comment or sending an email.
-url: "" # the subpath of your site, e.g. /blog
-#url: "adamkostrzewa.github.io" # the base hostname & protocol for your site, e.g. http://example.com 
+url: "https://adamkostrzewa.github.io/" # the base hostname & protocol for your site, e.g. http://example.com 
 twitter_username: systemWbudowany
 github_username:  AdamKostrzewa
 
