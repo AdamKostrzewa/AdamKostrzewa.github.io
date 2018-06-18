@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ([PL] Linki Trojany)
+title: ([PL] Linki Trojany HW)
 image: /download/z80_circuit.jpg
 description: wybrane link do ciekawych prezentacji i wykładów o tematyce hardware hacking i architektura komputerów
 permalink: /linki/
