@@ -44,7 +44,7 @@ The world biggest silicon foundries, [source.](https://www.electronicsweekly.com
 | 3        | UMC             | Taiwan      | 8,5 %        |
 | 4        | Samsung         | South Korea | 7,7 %        |
 | 5        | SMIC            | Taiwan      | 5,4 %        |
-| 6        | TowerJazz       | Izrael      | 2,4 %        |
+| 6        | TowerJazz       | Israel      | 2,4 %        |
 | 7        | Powerchip       | Taiwan      | 1,8 %        |
 | 8        | VIS             | Taiwan      | 1,4 %        |
 | 9        | Hua Hong Semi   | China       | 1,4 %        |
