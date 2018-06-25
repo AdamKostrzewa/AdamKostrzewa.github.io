@@ -24,6 +24,8 @@ Co stoi za takimi anomaliami? Jakie jest wyjaśnienie takiego dziwnego trendu ry
 
 Dość proste. Jest tylko kilka firm (a nawet krajów na świecie) które mają zdolność produkcji i projektowania układów scalonych. Konsolidacja firm z rynku produkcji krzemu doprowadziła do tego że na świecie jest tylko sześć dużych firm produkujących pamięci z czego trzy firmy (Samsung, SK Hynix i Micron Group) miały w 2016 po konsolidacjach 90% procent rynku, patrz tabelka poniżej. W 2018 roku te sam trzy firmy posiadają już 96% rynku. Zauważmy że trzy pozostałe firmy, na podstawie danych z 2016 roku, mają razem 9% a cała reszta świata jakieś 1%. Reszta świata w tym ujęciu to głównie produkcja wojskowa.
 
+![DRAM marketshare](/download/DRAM-marketshare.png)
+
 Taka sytuacja stwarza niebezpieczeństwo monopolu już tylko przez sam podział rynku i daje duże możliwości zmowy cenowej - która nie musi nawet odbywać się w sposób bezpośredni. Na przykład firmy w reakcji na wzrost ceny konkurencji zwiększają swoją cenę zamiast ją zmniejszać. Jest w tym logika jeśli nie chce / nie mogę zwiększyć mocy przerobowych bądź zrozumiałem intencje konkurencji. Podobna sytuacja jest dobrze znana kierowcom. Gdy cena baryłki ropy rośnie błyskawicznie wszystkie stacje benzynowe podwyższają cenę. Gdy jednak cena baryłki spada, to cena obniżana jest dopiero wtedy  gdy konkurencja ją też obniży i tylko o tyle o ile obniży konkurencja. 
 W ten sposób sprawdza się próg „wytrzymałości” portfela przeciętnego „Kowalskiego|”. Wiadomo bowiem dolny próg ceny wyznaczają koszty produkcji – poniżej jest strata. Górny limit nie istnieje – cena jest tak wysoka ile wstanie jest zapłacić klient. Jest to całkowicie sprzeczne z prawem zbytu i podaży ale zdarza się notorycznie. Przykłady?
 
