@@ -17,7 +17,7 @@ Pytanie, którego autorzy często są oskarżani  o bycie dyletantami, jest uzas
 
 Trojan  sprzętowy (hardware’owy) działa bardzo podobnie do trojana w  oprogramowaniu. Użytkownik kupuje interesujący go komponent, na przykład  klawiaturę lub myszkę z interfejsem USB (patrz *Rysunek 1*), która oprócz pobierania informacji o wciskanych klawiszach posiada jeszcze [układ zdolny do generowania takich sygnałów](http://www.blackhat.com/docs/asia-14/materials/Dunning/Asia-14-Dunning-Building-Trojan-Hardware-At-Home.pdf).  Oczywiście ten „walor” produktu jest pomijany w dokumentacji. Następnie  układ ten jest w stanie odtworzyć zapisane w pamięci flash makra i  generować polecenia wyzwalane zewnętrznymi sygnałami sterującymi.
 
-*![img](download/trojan-1.png)*
+*![img](/download/trojan-1.png)*
 
 *Rysunek 1. Trojan sprzętowy w myszce (a) i klawiaturze (b), źródło:* [*JP Dunning “.ronin” BlackHat Asia 2014*](https://www.blackhat.com/docs/asia-14/materials/Dunning/Asia-14-Dunning-Building-Trojan-Hardware-At-Home.pdf)
 
@@ -38,7 +38,7 @@ Trojany sprzętowe mają jednak niepodważalne zalety. Ich wykrycie i analiza dz
 
 Techniczna  możliwość wprowadzenia trojana sprzętowego to fakt naukowy potwierdzony  wynikami badań i publicznie prezentowanymi prototypami. Od ponad 20 lat  temat jest obiektem badań naukowych i przemysłowych na całym świecie.  Liczba publikacji rośnie lawinowo z roku na rok, np. w 2017 Google  Scholar stwierdza 2500 nowych publikacji po hasłem “hardware trojan”,  patrz grafika poniżej (zachęcam do samodzielnego szukania i  weryfikacji).
 
-*![img](download/trojan-2.png)*
+*![img](/download/trojan-2.png)*
 
 *Rysunek 2. Liczba publikacji ze słowem kluczowym “hardware trojans” w ujęciu rocznym, źródło:* [*Google Scholar*](https://scholar.google.de/scholar?hl=de&as_sdt=0%2C5&q=hardware+trojans&btnG=&oq=hardwar)
 
@@ -72,7 +72,7 @@ Następną  kwestią utrudniającą inżynierię wsteczną jest współbieżnoś
 
 Dodatkowo  na końcowy kształt układu elektronicznego mają też wpływ czynniki  ekonomiczne, takie jak cena pamięci czy podzespołów, które dynamicznie  zmieniają się w czasie. Jak wiadomo z rewersu starszych generacji  procesorów, budowa wielu elementów układu nie musi być oczywista i  prosta do zrozumienia z przyczyn czysto praktycznych. Dobrym przykładem  są procesory z lat 70. i 80., które ze względu na wykonanie za pomocą  starych procesów technologicznych (8000–1500 nm) są częstym obiektem  analizy wstecznej dokonywanej przez [amatorów i profesjonalistów](https://www.youtube.com/watch?v=aHx-XUA6f9g). W procesorze Z80 jednostka arytmetyczna według specyfikacji jest 8-bitowa, jednak jej wykonanie odbywa się za pomocą [czterech rejestrów w dwustopniowym potoku](http://www.righto.com/2013/09/the-z-80-has-4-bit-alu-heres-how-it.html), patrz *Rysunek 3*.  Pozwoliło to projektantom zaoszczędzić cenne miejsce na chipie, a  użytkownik / programista nie odczuwa różnicy, gdyż wykonanie programu  jest zdefiniowanie przez wydajność innych fragmentów układu i dlatego  stopnie potoku są transparentne.  Kolejnym problemem jest kompatybilność  wsteczna, która często wymusza istnienie artefaktów projektowych, tzn.  elementów, które są umieszczane na chipie ze względu na starsze  programy, a nie obecny stan techniki. Dobrym przykładem jest proces [bootowania (startu) architektury x86](http://wiki.osdev.org/System_Initialization_(x86)), który jest skomplikowany i trudny do zrozumienia dla wielu użytkowników. 
 
-![img](download/trojan-3.png)
+![img](/download/trojan-3.png)
 
 *Rysunek 3. Zdjęcie struktury układu Z80, źródło:* [*Wikipedia*](https://upload.wikimedia.org/wikipedia/commons/d/d1/Z80A-HD.jpg), *oznaczenia autora*
 
