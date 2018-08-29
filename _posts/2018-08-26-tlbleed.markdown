@@ -6,12 +6,6 @@ image: /download/dram_dies.jpg
 categories: jekyll update
 ---
 
-
-
-*Artykuł był opublikowany również w serwisie [ZaufanaTrzeciaStrona](https://zaufanatrzeciastrona.pl/post/luka-w-procesorach-intela-tlbleed-ujawnia-tajne-klucze/).*
-
-
-
 Na konferencji Black Hat USA 2018 [Ben Gras](https://www.vusec.net/people/ben-gras/) z Uniwersytetu Vrije w Amsterdamie przedstawił lukę w zabezpieczeniach procesorów Intela, nazwaną roboczo TLBleed. Jak groźny jest TLBleed dla mojego systemu i instytucji?
 
 Już sama zapowiedź tematu prezentacji wzbudziła ogromne zainteresowanie mediów i liczne dyskusje na portalach branżowych i społecznościowych. O prezentacji i luce pisały największe strony, np. [TheRegister](https://www.theregister.co.uk/2018/06/22/intel_tlbleed_key_data_leak/), [ArsTechnica](https://arstechnica.com/gadgets/2018/06/tlbleed-a-new-way-to-leak-crypto-keys-on-hyperthreaded-processors/), [ZDnet](https://www.zdnet.com/article/tlbleed-is-latest-intel-cpu-flaw-to-surface-but-dont-expect-it-to-be-fixed/), [Techrepublic](https://www.techrepublic.com/article/why-intel-wont-patch-tlbleed-vulnerability-despite-serious-concerns-for-cloud-users/), [TechTarget](https://searchsecurity.techtarget.com/news/252443819/TLBleed-attack-can-extract-signing-keys-but-exploit-is-difficult). Nic dziwnego, gdyż nie tak dawno, bo w styczniu tego roku, podatności Spectre i Meltdown stały się dla Intela i jego klientów źródłem wielu problemów. Okazało się, że ich załatanie za pomocą oprogramowania jest niemożliwe. 15 marca 2018 r. Intel poinformował, że przeprojektuje swoje procesory (co może doprowadzić do strat wydajności), aby pomóc w ochronie przed Spectre i Meltdown. Nowe produkty  powinny trafić na rynek do końca tego roku. Zapowiedź TLBleeda wydawała się zatem kontynuacją tej serii. Słychać było głosy o tym, że czarna passa Intela trwa. Czy warto było czekać na TLBLeed?
@@ -55,3 +49,10 @@ Również reakcja firmy Intel była bardzo spokojna. Mimo że firma prowadzi pro
 Chyba najlepszym podsumowaniem jest tutaj opinia końcowa z raportu firmy Red Hat. Red Hat zaleca, aby wszyscy użytkownicy traktowali Hyper-Threading jako część normalnego procesu konfiguracji systemu. Technologia ta pozwala na maksymalizację wydajności, jednak błędnie użyta może prowadzić do  zagrożeń dla bezpieczeństwa systemu – takich jak TLBleed i innych podobnych ataków związanych z analizą kanału bocznego. W związku z tym wątków w technologii Hyper-Threading nie należy nigdy postrzegać jako tanich dodatkowych rdzeni, lecz jako nieodłączną część jednego rdzenia. Każdy rdzeń powinien być konfigurowany i testowany jako całość – tak przez użytkownika, jak i system operacyjny. Właściwie zastosowany Hyper-Threading (w wielu przypadkach) faktycznie zwiększa ogólną przepustowość i wydajność systemu, jednak wymaga ostrożnego wykorzystania zasobów współdzielonych systemu.
 
 Jak groźny jest zatem TLBleed dla mojego systemu czy instytucji? Ben Gras pokazał na konkretnym przykładzie, jak nie powinno się używać Hyper-Threadingu – co potwierdzają opinie Intela i Red Hata. Wiele wskazuje jednak na to, że kanał boczny wykorzystany przez TLBleed może być dość prosto uszczelniony. Technologia Intela jest zatem bezpieczna dla użytkownika, jeśli ten zachowuje podstawowe zasady bezpieczeństwa i stosuje się do wskazówek firmy i badaczy.
+
+
+
+
+
+*Artykuł był opublikowany również w serwisie [ZaufanaTrzeciaStrona](https://zaufanatrzeciastrona.pl/post/luka-w-procesorach-intela-tlbleed-ujawnia-tajne-klucze/).*
+
