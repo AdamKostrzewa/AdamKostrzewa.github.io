@@ -6,6 +6,12 @@ image: /download/dram_dies.jpg
 categories: jekyll update
 ---
 
+
+
+*Artykuł był opublikowany również w serwisie [ZaufanaTrzeciaStrona](https://zaufanatrzeciastrona.pl/post/luka-w-procesorach-intela-tlbleed-ujawnia-tajne-klucze/).*
+
+
+
 Na konferencji Black Hat USA 2018 [Ben Gras](https://www.vusec.net/people/ben-gras/) z Uniwersytetu Vrije w Amsterdamie przedstawił lukę w zabezpieczeniach procesorów Intela, nazwaną roboczo TLBleed. Jak groźny jest TLBleed dla mojego systemu i instytucji?
 
 Już sama zapowiedź tematu prezentacji wzbudziła ogromne zainteresowanie mediów i liczne dyskusje na portalach branżowych i społecznościowych. O prezentacji i luce pisały największe strony, np. [TheRegister](https://www.theregister.co.uk/2018/06/22/intel_tlbleed_key_data_leak/), [ArsTechnica](https://arstechnica.com/gadgets/2018/06/tlbleed-a-new-way-to-leak-crypto-keys-on-hyperthreaded-processors/), [ZDnet](https://www.zdnet.com/article/tlbleed-is-latest-intel-cpu-flaw-to-surface-but-dont-expect-it-to-be-fixed/), [Techrepublic](https://www.techrepublic.com/article/why-intel-wont-patch-tlbleed-vulnerability-despite-serious-concerns-for-cloud-users/), [TechTarget](https://searchsecurity.techtarget.com/news/252443819/TLBleed-attack-can-extract-signing-keys-but-exploit-is-difficult). Nic dziwnego, gdyż nie tak dawno, bo w styczniu tego roku, podatności Spectre i Meltdown stały się dla Intela i jego klientów źródłem wielu problemów. Okazało się, że ich załatanie za pomocą oprogramowania jest niemożliwe. 15 marca 2018 r. Intel poinformował, że przeprojektuje swoje procesory (co może doprowadzić do strat wydajności), aby pomóc w ochronie przed Spectre i Meltdown. Nowe produkty  powinny trafić na rynek do końca tego roku. Zapowiedź TLBleeda wydawała się zatem kontynuacją tej serii. Słychać było głosy o tym, że czarna passa Intela trwa. Czy warto było czekać na TLBLeed?
