@@ -3,6 +3,7 @@ layout: post
 title:  "[PL] Bloomberg i Sprzętowy Implant z Chin"
 date:   2018-10-11 13:38:12 +0200
 image: /download/obrazek_bloomberg.png
+summar_large_image: /download/obrazek_bloomberg.png
 categories: jekyll update
 ---
 
