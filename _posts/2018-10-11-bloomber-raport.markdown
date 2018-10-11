@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Bezpieczeństwo czy wydajność? Jakie decyzje podejmą producenci procesorów?"
+title:  "[PL] Bloomberg i Sprzętowy Implant z Chin"
 date:   2018-10-11 13:38:12 +0200
 image: /download/dram_dies.jpg
 categories: jekyll update
