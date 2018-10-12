@@ -101,3 +101,4 @@ W całej sprawie wciąż jest wiele niejasności jednak jedno jest pewne – tro
 
 
 
+*Artykuł był opublikowany również w serwisie [ZaufanaTrzeciaStrona](https://zaufanatrzeciastrona.pl/post/jak-sprawdzic-swoj-komputer-pod-katem-obecnosci-implantow-sprzetowych/).*
