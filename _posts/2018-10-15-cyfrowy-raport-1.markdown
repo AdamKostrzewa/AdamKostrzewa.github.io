@@ -27,7 +27,7 @@ AMD wraca do gry - tym razem by zostać na dłużej! Wiele źródeł chwaliło w
 
 **Produkty DRAM mogą doświadczyć spadku cen o 5% w czwartym kwartale 2018 z powodu nadpodaży i słabego popytu**
 
-Źródło: https://press.trendforce.com/node/view/3163.html
+Źródło: [https://press.trendforce.com/node/view/3163.html](https://press.trendforce.com/node/view/3163.html)
 
 W końcu pozytywne informacje z rynku DRAM. Mimo toczonych procesów antymonopolowych przeciwko Samsungowi, Micronowi i SK Hynix ceny RAMu przez długi czas rosły. Ostatni raport DRAMeXchange przewiduje jednak że cena DRAMu spadnie o 5% w ostatnim kwartale tego roku. Jest to pierwszy spadek od prawie dwóch lat (dokładnie dziewięciu (!) kwartałów). Przyczyną spadku ma być stabilizacja na rynku serwerów i kryptowalut. 
 
@@ -69,10 +69,10 @@ Huawei Technologies Co. wyprzedziła już Apple Inc. w sprzedaży smartfonów. T
 
 Tutorial o użyciu SIMtrace do przechwytywania komunikacji między telefonem a kartą SIM w celu wyjaśnienia działania protokołu.
 
-https://www.youtube.com/watch?v=iJFnYBJJiuQ
+[https://www.youtube.com/watch?v=iJFnYBJJiuQ](https://www.youtube.com/watch?v=iJFnYBJJiuQ)
 
 **Rewers sprzętowy kart elektroniczne typu “smart”**
 
 Prezentacja pokazująca rewers karty elektronicznej. Podczas prezentacji omówione zostały wszystkie ważne aspekty rewersu a także kolejność działań.
 
-https://www.youtube.com/watch?v=62DGIUpscnY
+[https://www.youtube.com/watch?v=62DGIUpscnY](https://www.youtube.com/watch?v=62DGIUpscnY)
