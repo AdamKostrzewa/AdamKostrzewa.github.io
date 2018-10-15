@@ -9,7 +9,7 @@ categories: jekyll update
 
 
 
-***[[[ Tematy techniczne ]]] ***
+[[[ **Tematy techniczne** ]]] 
 
 1. **AMD ogłasza nowe 12- i 24-rdzeniowe procesory o wdzięcznej nazwie “Threadripper”.** 
 
@@ -17,7 +17,7 @@ categories: jekyll update
 
 Jest to odpowiedź AMD na serię i9 Intela i kontynuacja z zapowiadanej wcześniej serii jak również  nowy tryb pamięci zwiększający wydajność. Stosunek techniki do ceny wypada na korzyść AMD - więcej rdzeni za mniej pieniędzy a porównywalna wydajność.
 
-![img](downloads/wzniki_threadripper.png)
+![img](/download/wzniki_threadripper.png)
 
 2. **W 2019 AMD najprawdopodobniej osiągnie 30% udział w rynku** 
 
@@ -63,7 +63,7 @@ Więcej na ten temat wkrótce na blogu.
 
 Huawei Technologies Co. wyprzedziła już Apple Inc. w sprzedaży smartfonów. Teraz chce przejąć wyprzedzić największe firmy  amerykańskie w dziedzinie sprzętowych akceleratorów na potrzeby sztucznej inteligencji. Więcej w raporcie Bloomberga na ten temat.
 
-***[[[ Edukacja i Tutoriale ]]]***
+[[[ **Edukacja i Tutoriale** ]]]
 
 1. Wstęp do budowy karty SIM
 
