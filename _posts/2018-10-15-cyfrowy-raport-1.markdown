@@ -73,6 +73,6 @@ https://www.youtube.com/watch?v=iJFnYBJJiuQ
 
 **Rewers sprzętowy kart elektroniczne typu “smart”**
 
-Preyentacja pokazująca rewers karty elektroniczna od a do z. Podczas prezentacje omówione zostały wszystkie ważne aspekty rewersu a także kolejność działań.
+Prezentacja pokazująca rewers karty elektronicznej. Podczas prezentacji omówione zostały wszystkie ważne aspekty rewersu a także kolejność działań.
 
 https://www.youtube.com/watch?v=62DGIUpscnY
