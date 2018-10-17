@@ -21,13 +21,15 @@ Cena jednostkowa spada wraz z rozwojem technologii produkcji i długości serii.
 
 Cena kości DDR4-2400 na początku tego roku wynosiła 192 USD, gdy za tę samą pamięć przed dwoma laty (2016) płaciliśmy 81 USD. Poniżej wykres z serwisu [PCpartPicker](https://pcpartpicker.com/), który generuje automatycznie ceny dla modułów pamięci na podstawie danych dostępnych w internecie. Jak widać, tendencja jest wzrostowa i odwrotna do oczekiwań (a także teorii).
 
-
+![img](/download/DRAM-marketshare.png)
 
 Cena za moduł F4-2400C15D-16GVB G.SKILL Ripjaws 2x8GB DDR4 2400MHz 15-15-15-35, źródło: [gamersnexus](https://www.gamersnexus.net/industry/3212-ram-price-investigation-ddr4-same-price-as-initial-launch)
 
 Co stoi za takimi anomaliami? Jakie jest wyjaśnienie takiego dziwnego trendu rynkowego?
 
 Dość proste. Jest tylko kilka firm, które mają zdolność produkcji seryjnej i projektowania układów scalonych. Konsolidacja firm z rynku produkcji krzemu doprowadziła do tego, że na świecie jest tylko sześć dużych firm produkujących pamięci, z czego trzy firmy (Samsung, SK Hynix i Micron Group) miały w 2016 po konsolidacjach 90% procent rynku, patrz tabelka poniżej. W 2018 roku te same trzy firmy posiadają już 96% rynku. Zauważmy, że trzy pozostałe firmy, na podstawie danych z 2016 roku, mają razem 9% rynku, a cała reszta świata pozostały 1%.
+
+![img](/download/DRAM-marketshare.png)
 
 
 
