@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hardware Trojans - Attack Models"
+title:  "[ENG] Hardware Trojans - Attack Models"
 date:   2018-06-19 08:38:12 +0200
 categories: jekyll update
 ---

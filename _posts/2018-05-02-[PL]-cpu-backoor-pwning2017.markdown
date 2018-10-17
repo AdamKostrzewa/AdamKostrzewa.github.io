@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] CPU Backdoor PWNing Conference 2017, Warszawa "
+title:  "CPU Backdoor PWNing Conference 2017, Warszawa "
 date:   2018-05-02 12:38:12 +0200
 categories: jekyll update
 ---

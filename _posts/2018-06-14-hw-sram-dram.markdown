@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Ile kosztuje produkcja układu scalonego? Czynniki techniczne"
+title:  "Ile kosztuje produkcja układu scalonego? Czynniki techniczne"
 date:   2018-06-14 09:38:12 +0200
 image: /download/dram_dies.jpg
 categories: jekyll update

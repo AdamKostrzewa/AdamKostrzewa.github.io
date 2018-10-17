@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Fakty i mity na temat trojanów sprzętowych"
+title:  "Fakty i mity na temat trojanów sprzętowych"
 date:   2018-07-26 09:38:12 +0200
 image: /download/dram_dies.jpg
 categories: jekyll update

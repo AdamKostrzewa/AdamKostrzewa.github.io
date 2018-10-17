@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Ile kosztuje produkcja układu scalonego? Czynniki ekonomiczne."
+title:  "Ile kosztuje produkcja układu scalonego? Czynniki ekonomiczne."
 date:   2018-06-25 09:38:12 +0200
 image: /download/dram_dies.jpg
 categories: jekyll update
@@ -33,7 +33,7 @@ Chiny są głównym światowym producentem elektroniki (ponad 50% produkcji) dru
 
 
 * W 2005 Samsung zapłacił 300 mln. dolarów i przyznał się do zmowy 	cenowej na rynku pamięci. Rozprawa odbyła się w San Francisco w 	Kalifornii <http://www.theregister.co.uk/2005/10/13/samsung_pricing/>
- 
+
 * Ta sprawa ewidentnie nie dała Samsungowi do myślenia i w 2014 roku 	ponownie Samsung tym razem w towarzystwie innych graczy Microna, 	Hynixa, i kilku innych Elpida, Hitachi, Infineon, Mitsubishi, Mosel, 	Nanya, NEC, Toshiba, Winbond kara to 310 mln-ów (z czego Samsung 	zapłacił 110 mln) dolarów 	<https://www.gamersnexus.net/news/1348-dram-price-fixing-98-02>
 
 * W 2018 chińskie biuro antykorupcyjne spotkało się z 	przedstawicielami Micron Technolog, detale rozmów są utajnione. 	Spotkanie to odbywa się po podobnym spotkaniu z Samsungiem i 	zbliżającym się pozwie grupowym, w którym twierdzi się, że 	dostawcy pamięci DRAM tworzą kartel w zakresie ustalania cen. 	Chińskie spotkanie z Samsungiem miło rzekomo być kompromisowym 	(https://press.trendforce.com/press/20180525-3108.html) jeśli 	chodzi o zakres cen pamięci DRAM i zwiększonie produkcji. 	Spotkanie firmy Micron z chińskimi agencjami rządowymi może 	przynieść podobne rezultaty. Chiny nie zwróciły jeszcze uwagi na 	SK Hynix, ale biorąc pod uwagę obecny klimat, możemy oczekiwać, 	że Chiny wcześniej czy później do nich dotrą. Źródło 	<https://www.gamersnexus.net/news-pc/3311-hw-news-china-vs-memory-makers-b450>

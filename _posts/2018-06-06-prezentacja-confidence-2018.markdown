@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Presentation from Confidence 2018 - Who and why should fear HW trojans?"
+title:  "[ENG] Presentation from Confidence 2018 - Who and why should fear HW trojans?"
 date:   2018-06-06 08:38:12 +0200
 categories: jekyll update
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Cyfrowy Raport Nr. 1 - Newsy i Tutoriale"
+title:  "[Cyfrowy Raport Nr. 1] - Newsy i Tutoriale"
 date:   2018-10-15 09:38:12 +0200
 image: /download/porcelane_case.jpg
 summary_large_image: /download/porcelane_case.jpg

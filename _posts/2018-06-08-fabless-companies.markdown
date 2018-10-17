@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Modele Ataku Trojanów Sprzętowych"
+title:  "Modele Ataku Trojanów Sprzętowych"
 date:   2018-06-08 08:38:12 +0200
 categories: jekyll update
 ---

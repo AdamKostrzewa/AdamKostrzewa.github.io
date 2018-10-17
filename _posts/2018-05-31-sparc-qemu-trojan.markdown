@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Testing a HW Trojan in QEMU for Sparc architecture"
+title:  "[ENG] Testing a HW Trojan in QEMU for Sparc architecture"
 date:   2018-05-31 10:38:12 +0200
 categories: jekyll update
 ---
@@ -46,7 +46,7 @@ In order to use these tools outside of the folder add the location to the system
 
 
 All sources were checked on (26-May-2018)
- 
+
 
 Description:
 
@@ -96,10 +96,10 @@ LOCATION="/path_to_buildroot/output/images"
 #include <stdlib.h>
 
 extern __inline__ unsigned long get_psr(void) {
-	unsigned int retval;
-	__asm__ __volatile__("rd %%psr, %0\n\t" :
-			     "=r" (retval) :);
-	return (retval);
+​	unsigned int retval;
+​	__asm__ __volatile__("rd %%psr, %0\n\t" :
+​			     "=r" (retval) :);
+​	return (retval);
 }
 
 int main(){
@@ -108,15 +108,15 @@ int main(){
 	int a = 1024;
 	int b = 63;
 	int c = a / b;
-	
+
 //	int psr = get_psr();
-	
+​	
 	printf("a=%d b=%d \nc= a / b = %d \n", a, b, c);
 	getchar();
-
+	
 	int *x = NULL;  
 	int y = *x;	// null pointer dereference
-
+	
 	return 0;
 }
 {% endhighlight %}
@@ -150,16 +150,16 @@ Illegal instruction
 #include <stdlib.h>
 
 extern __inline__ unsigned long get_psr(void) {
-	unsigned int retval;
-	__asm__ __volatile__("rd %%psr, %0\n\t" :
-			     "=r" (retval) :);
-	return (retval);
+​	unsigned int retval;
+​	__asm__ __volatile__("rd %%psr, %0\n\t" :
+​			     "=r" (retval) :);
+​	return (retval);
 }
 
 extern __inline__ void put_psr(unsigned int new_psr)
 {
-	__asm__ __volatile__("wr %0, 0x0, %%psr\n\t"
-			     "nop; nop; nop;" : :
+​	__asm__ __volatile__("wr %0, 0x0, %%psr\n\t"
+​			     "nop; nop; nop;" : :
  			     "r" (new_psr));
 }
 
@@ -167,7 +167,7 @@ extern __inline__ void put_psr(unsigned int new_psr)
 int main(){
 
 	printf("Demo Application - Trojan Trigger\n");
-
+	
 	int a = 1024;
 	int b = 64;
 	int c = a / b;
@@ -183,16 +183,16 @@ int main(){
 	c = a / b;
 	int *x = NULL;  // x is a null pointer
 	int y = *x;	// null pointer dereference
-
+	
 	return 0;
 }
 {% endhighlight %}
 
 
 The trigger.c file contains the triggering signal, i.e., division with operands int a = 1024;
-	int b = 64; 	int c = a / b; Consequently after its execution we are able to use get_psr and put_psr functions
-	without the "Illegal instruction" error.
-	
+​	int b = 64; 	int c = a / b; Consequently after its execution we are able to use get_psr and put_psr functions
+​	without the "Illegal instruction" error.
+​	
 Exemplary output of the execution looks as follows:
 {% highlight shell %}
 $ ./a.out
@@ -220,10 +220,10 @@ PSR 40000a5
 Unable to handle kernel NULL pointer dereference
 tsk->{mm,active_mm}->context = 00000000
 tsk->{mm,active_mm}->pgd = 00000000
-              \|/ ____ \|/
-              "@'/ ,. \`@"
-              /_| \__/ |_\
-                 \__U_/
+​              \|/ ____ \|/
+​              "@'/ ,. \`@"
+​              /_| \__/ |_\
+​                 \__U_/
 (null)(0): Oops [#1]
 CPU: 0 PID: 0 Comm: (null) Not tainted 4.11.12 #1
 task:   (null) task.stack:   (null)

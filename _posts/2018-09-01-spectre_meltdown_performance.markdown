@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Bezpieczeństwo czy wydajność? Jakie decyzje podejmą producenci procesorów?"
+title:  "Bezpieczeństwo czy wydajność? Jakie decyzje podejmą producenci procesorów?"
 date:   2018-09-01 09:38:12 +0200
 image: /download/dram_dies.jpg
 categories: jekyll update

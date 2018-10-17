@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Trojany sprzetowe"
+title:  "Trojany sprzetowe - podstawy i zasady działania"
 date:   2018-05-16 14:28:00 +0200
 categories: jekyll update
 ---

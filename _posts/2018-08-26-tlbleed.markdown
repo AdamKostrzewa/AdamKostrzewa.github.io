@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PL] Luka w procesorach Intela – TLBleed ujawnia tajne klucze"
+title:  "Luka w procesorach Intela – TLBleed ujawnia tajne klucze"
 date:   2018-07-26 09:38:12 +0200
 image: /download/dram_dies.jpg
 categories: jekyll update
