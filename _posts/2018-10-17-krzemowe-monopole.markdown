@@ -21,7 +21,7 @@ Cena jednostkowa spada wraz z rozwojem technologii produkcji i długości serii.
 
 Cena kości DDR4-2400 na początku tego roku wynosiła 192 USD, gdy za tę samą pamięć przed dwoma laty (2016) płaciliśmy 81 USD. Poniżej wykres z serwisu [PCpartPicker](https://pcpartpicker.com/), który generuje automatycznie ceny dla modułów pamięci na podstawie danych dostępnych w internecie. Jak widać, tendencja jest wzrostowa i odwrotna do oczekiwań (a także teorii).
 
-![img](/download/DRAM-marketshare.png)
+![img](/download/dram-price.jpg)
 
 Cena za moduł F4-2400C15D-16GVB G.SKILL Ripjaws 2x8GB DDR4 2400MHz 15-15-15-35, źródło: [gamersnexus](https://www.gamersnexus.net/industry/3212-ram-price-investigation-ddr4-same-price-as-initial-launch)
 
