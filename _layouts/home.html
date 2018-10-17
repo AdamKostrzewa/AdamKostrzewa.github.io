@@ -26,15 +26,18 @@ layout: default
 	  {% endfor %}
 
 	  <div class="pagination">
+ <h2>
 		{% if paginator.previous_page %}
 		  <a href="{{ paginator.previous_page_path }}" class="previous">&laquo; Poprzednia</a>
 		{% endif %}
 
-		<span class="page_number">Strona: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+		<span class="page_number">Strona: {{ paginator.page }} z {{ paginator.total_pages }}</span>
 
 		{% if paginator.next_page %}
 		  <a href="{{ paginator.next_page_path }}" class="next">Następna &raquo;</a>
 		{% endif %}
+</h2>
 	  </div>
 	</ul>
 
