@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Krzemowe Monopole"
-date:   2018-10-15 09:38:12 +0200
+date:   2018-10-17 13:46:12 +0200
 image: /download/krzem-580x387.jpg
 summary_large_image: /download/krzem-580x387.jpg
 categories: jekyll update
