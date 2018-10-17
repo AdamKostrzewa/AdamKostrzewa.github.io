@@ -34,6 +34,10 @@ layout: default
 
 		<span class="page_number">Strona: {{ paginator.page }} z {{ paginator.total_pages }}</span>
 
+		{% if paginator.previous_page %}
+		</h2>
+		{% endif %}
+		
 		{% if paginator.next_page %}
 		  <a href="{{ paginator.next_page_path }}" class="next">Następna &raquo;</a>
 		{% endif %}
