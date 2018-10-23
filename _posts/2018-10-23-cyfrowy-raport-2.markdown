@@ -41,7 +41,7 @@ Podczas analizy wstecznej oprogramowania modemu dla nowego iPhone XS odkryto kod
 
 <https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-courtesy-sednit-group/>
 
-Nasze najgorsze obawy dotyczące bezpieczeństwa firmwaru i sprzętu stają się powoli rzeczywistością. Eksperci ESET informują, że po raz pierwszy znaleźli wirusa atakującego UEFI BIOS i zastosowanego w praktyce. Był on wykorzystywany między innymi do ukierunkowanych ataków na pracowników rządowych na bałkanach.
+Nasze najgorsze obawy dotyczące bezpieczeństwa firmewaru i sprzętu stają się powoli rzeczywistością. Eksperci ESET informują, że po raz pierwszy znaleźli wirusa atakującego UEFI BIOS i zastosowanego w praktyce. Był on wykorzystywany między innymi do ukierunkowanych ataków na pracowników rządowych na bałkanach.
 
 **Szpiegowanie z chipami**
 
@@ -72,4 +72,5 @@ Jak napisać publikację techniczną - co jest ważne i na co zwracać uwagę?
 
 Blog ze specyfikacją systemu naprowadzającego programu Apollo
 
-<https://rescue1130.blogspot.com/2018/10/miscellaneous-notes-on-agc-design-from.html>https://www.youtube.com/watch?v=62DGIUpscnY)
+<https://rescue1130.blogspot.com/2018/10/miscellaneous-notes-on-agc-design-from.html>
+
