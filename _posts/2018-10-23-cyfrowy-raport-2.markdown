@@ -2,8 +2,8 @@
 layout: post
 title:  "[Cyfrowy Raport Nr. 2] - Newsy i Tutoriale"
 date:   2018-10-23 09:38:12 +0200
-image: /download/porcelane_case.jpg
-summary_large_image: /download/porcelane_case.jpg
+image: /download/PCB_Spectrum.jpg
+summary_large_image: /download/PCB_Spectrum.jpg
 categories: jekyll update
 ---
 
