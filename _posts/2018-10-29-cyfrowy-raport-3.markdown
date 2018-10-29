@@ -15,7 +15,7 @@ Mój subiektywny przegląd newsów i wydarzeń z ostatniego tygodnia. Zapraszam 
 
 **Wstępniak**   Witam w kolejnej edycji raportu. Tym razem kilka zmian technicznych w odpowiedzi na feedback za który bardzo dziękuje! Zmiany w można opisać tak: więcej linków i krótsze opisy! Zapraszam do lektury i komentowania.  
 
-**Intel vs AMD **
+**Intel vs AMD**
 
 Żródło <https://www.gry-online.pl/S013.asp?ID=111761>
 
@@ -57,13 +57,13 @@ Intel wraca do lutowania swoich obudów (elementów IHS) w swoich procesorach za
 
 **Ciekawy wywiad z przedstawicielem Intela na temat technologii firmy**
 
-Źródło https://www.youtube.com/watch?v=OP2QW2QFrtM
+Źródło<https://www.youtube.com/watch?v=OP2QW2QFrtM> 
 
 Wywiad z Anand Srivatsa (VP & SM Desktop, Systems & Channel Group [@Intel](https://twitter.com/intel)) na temat najnowszej 9 generacji procesorów, dużo ciekawostek, newsów no i zapowiedz 10nm procesu litograficznego na koniec roku 2019
 
 **Decapping Chips The Strike Easy Hard Way - Adam “Major Malfunction” Laurie & Zac Franken**
 
-Źródło https://www.youtube.com/watch?v=0Z4aF-qiziM
+Źródło <https://www.youtube.com/watch?v=0Z4aF-qiziM> 
 
 tutorial na temat rewersu krzemu w warunkach domowych z perspektywy USA (dużo o rozpuszczaniu plastiku wentylacji i sprzęcie laboratoryjnym)
 
