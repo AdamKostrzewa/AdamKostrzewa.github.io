@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ([PL] Linki Trojany HW)
+title: (Linki)
 image: /download/z80_circuit.jpg
 description: wybrane link do ciekawych prezentacji i wykładów o tematyce hardware hacking i architektura komputerów
 permalink: /linki/
@@ -25,7 +25,7 @@ permalink: /linki/
 <meta name="twitter:image" content="https://{{ site.title_image }}">
 {% endif %}
 <!-- end of Twitter cards -->
-    
+
 W tej sekcji przedstawiam wybrane link do ciekawych prezentacji, wykładów i tutoriali o tematyce hardware hacking, elektronika cyfrowa i architektura komputerów. 
 Lista powiększy się o low-level programming i OS programming (kernel hacking).
 
