@@ -21,7 +21,7 @@ Foreshadow, tak jak Meltdown, opiera się na wykorzystaniu podatności wynikają
 
 Głównym celem ataku L1TF są fragmenty systemu chronione przez sprzętowe mechanizmy bezpieczeństwa Intela, który od dawna pracował nad wzmocnieniem ochrony użytkowników swoich produktów. Wynikiem wieloletnich starań firmy są enklawy SGX (ang. *Intel Software Guard Extensions*). Mechanizm ten dodaje do architektury procesora zestaw instrukcji, które umożliwiają aplikacjom działającym w przestrzeni użytkownika (trzeci pierścień ochrony) alokowanie prywatnych zakresów pamięci, zwanych enklawami, które będą chronione przed procesami działającymi na wyższych poziomach uprawnień (np. opanowany przez atakującego kernel). Dostęp do danych z enklawy jest przeprowadzany dla użytkownika z poziomu pamięci wirtualnej, jednak prawa dostępu są sprawdzane na poziomie sprzętowym, przez procesor wykonujący konkretne instrukcje. Takie wykonanie gwarantuje, że zainfekowane oprogramowanie systemowe nie może uzyskać dostępu do pamięci prywatnej enklawy, mimo że wciąż może nią zarządzać (np. alokacja, dealokowanie i mapowanie stron). CPU z obsługą SGX weryfikuje proces tłumaczenia adresów wirtualnych na fizyczne i może zasygnalizować [błąd strony](https://en.wikipedia.org/wiki/Page_fault) (ang. *page fault*) podczas próby dostępu przez nieuprawniony proces do zakresu pamięci enklawy. Wszelkie próby nieuprawnionego (w tym bezpośredniego) dostępu do prywatnych stron enklawy są ignorowane (zwracana jest wartość -1).
 
-![img](download/l1tf_2.png)
+![img](/download/l1tf_2.png)
 
 Schemat działania enklawy SGX, [źródło](https://www.usenix.org/sites/default/files/conference/protected-files/security18_slides_bulck.pdf).
 
@@ -57,7 +57,7 @@ Fazy te opiszemy w tej właśnie kolejności. Faza 1 zaczyna się od  wymuszenia
 
 Odwołanie (zderefencjonowanie) pamięci enklawy, do której użytkownik nie ma praw dostępu, standardowo nie powoduje wystąpienia błędu strony. Mechanizm SGX usuwa zawartość strony i zastępuje ją jakąś domyślną wartością, w przypadku Intela jest to −1. Ze względu na brak wyjątku nie ma też sytuacji wyścigu i atak nie mógłby wystąpić. By poradzić sobie z tym problemem, autorzy ataku wykorzystali fakt, że ten mechanizm SGX-a jest zaimplementowany po wykonaniu tradycyjnej ochrony pamięci wirtualnej bazującej na  stronach. Jeśli więc błąd strony wystąpi w TLB, to sprawdzanie praw dostępu nie jest wykonywane. W związku z tym atakujący nie musi mieć praw dostępu do pamięci enklawy bądź obawiać się, że dane zostaną zastąpione jakimś hashem. Zatem mimo że linia 3 spowoduje błąd strony, to instrukcje z linii 4 i 5 zostaną wykonane w sposób spekulacyjny, by policzyć adres elementu *v* w buforze wyroczni (ang. *oracle buffer*) przed jego pobraniem z pamięci. *∗oracle* to wskaźnik do bufora wyroczni, który jest tablicą,  a jej dane NIE znajdują się w pamięci podręcznej. Atakujący może upewnić się, że warunek ten jest spełniony poprzez użycie instrukturcji *cflush* dla wszystkich jego elementów. Jest to ważne, gdyż po wykonaniu ataku pomiar czasu dostępu do elementu będzie wskazywał na to, czy dane pochodzą z enklawy (pamięć podręczna L1) czy nie (np. pamięć główna). Wskaźnik *∗secret_ptr* doprowadzi do błędu strony na wybranym przez nas adresie, po którym nastąpi wykonanie spekulacyjne. Tutaj czas na dygresję w odniesieniu do enklaw SGX.
 
-![img](download/l1tf_3.png)
+![img](/download/l1tf_3.png)
 
 Schemat ataku L1TF foreshadow z kodem w assemblerze dla kodu z wcześniejszej części artykułu.
 
@@ -87,7 +87,7 @@ Mimo że Intel uznaje zagrożenie za istniejące, zwraca jednocześnie uwagę, �
 
 Intel wypuścił już patche w mikro-kodzie, które likwidują sytuacje wyścigu w większości z wymienionych produktów i pozwalają uniknąć zagrożenia. [Wyniki większości benchmarków](https://www.intel.com/content/www/us/en/architecture-and-technology/l1tf.html)potwierdzają, że wpływ łatek na wydajność jest minimalny w przypadku większości zastosowań dla systemów typu PC. Jednak przedstawione wyniki – patrz poniżej – potwierdzają też, że wyłączenie hyper threadingu wymagane do zabezpieczenia przed L1TF znacząco zmniejsza wydajność procesorów Xeon w wielu aplikacjach serwerowych (co było do przewidzenia). Spadki wydajności są największe w przypadku serwerów z wieloma maszynami wirtualnymi (ataków z użyciem złośliwych wirtualnych maszyn). Sprzętowe mechanizmy ochronne obiecane przez Intela dla następnych generacji procesorów Intela mają zapewnić zdecydowanie lepszą wydajność niż aktualizacje mikrokodów. Przyjdzie nam na nie jednak trochę poczekać.
 
-![img](download/l1tf_1.png)
+![img](/download/l1tf_1.png)
 
 Wyniki wydajności dla procesorów w zastosowaniach serwerowych z patchami likwidującymi podatność L1TF,[źródło Intel](https://www.intel.com/content/www/us/en/architecture-and-technology/l1tf.html).
 
