@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Cyfrowy Raport Nr. 4] - Newsy, Linki i Tutoriale"
-date:   2018-11-06 09:38:12 +0200
+date:   2018-11-06 11:16:12 +0200
 image: /download/PCB_Spectrum.jpg
 summary_large_image: /download/PCB_Spectrum.jpg
 categories: jekyll update
