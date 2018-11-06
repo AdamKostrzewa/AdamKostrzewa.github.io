@@ -17,7 +17,7 @@ Mój subiektywny przegląd newsów i wydarzeń z ostatniego tygodnia. Zapraszam 
 
 US blokuja kolejna po ZTE firme elektroniczna Fujian Jinhua gdyz firma ta "stwarza znaczne ryzyko zaangażowania się w działania sprzeczne z interesami bezpieczeństwa narodowego Stanów Zjednoczonych". Sadze ze jeszcze nie jeden ban zobaczymy :)
 
-[**Nowa ustawa zabrania zakupu chińskiego sprzętu dla urządzeń nadzoru w USA **](https://www.wsj.com/articles/bill-moves-to-block-u-s-from-buying-chinese-surveillance-equipment-1527239988)
+[**Nowa ustawa zabrania zakupu chińskiego sprzętu dla urządzeń nadzoru w USA**](https://www.wsj.com/articles/bill-moves-to-block-u-s-from-buying-chinese-surveillance-equipment-1527239988)
 
 Rząd Stanów Zjednoczonych (i jego instytucje) otrzymają zakaz zakupu chińskich kamer do nadzoru elektronicznego na mocy ustawy o polityce obronnej, która została uchwalona przez Izbę Reprezentantów. To posunięcie przeciwko chińskiej technologii jest motywowane obawami dotyczącymi bezpieczeństwa narodowego.
 
