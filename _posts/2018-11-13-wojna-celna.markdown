@@ -13,9 +13,15 @@ Wojna celna wychodzi z fazy deklaratywnej w fazę aktywną. 17 września tego ro
 
 **Towary objęte nowymi cłami**
 
-Dokument wprowadzający sankcje jest długi (194 strony) i w bardzo dokładny sposób wyszczególnia wszystkie produkty objęte ustawą (np. maszynki do golenia, żyletki, nasiona soi, części do odkurzaczy etc.). Można z dużą pewnością stwierdzić, że nie ma praktycznie żadnego komponentu elektronicznego który nie zostałby nimi objęty. Na liście znajdują się gotowe produkty np. zasilacze komputerowe, karty graficzne, płyty główne, kompletne konstrukcje systemowe, mosty sieciowe, dyski SSD, podkładki pod mysz, myszy komputerowe i wiele innych.
+Co zawiera lista
 
-Analiza dokumentu jest dość trudna gdyż użyto terminologii prawniczo-technicznej znanej z wniosków patentowych.  Dodatkowo niektóre pozycje są napisane w skomplikowany sposób utrudniający analizę np. klawiatury i myszy w pakietach zostają objęte cłami, ale klawiatury sprzedawane osobno już nie.
+Dokument wprowadzający sankcje jest długi (194 strony) i w bardzo dokładny sposób wyszczególnia wszystkie produkty objęte ustawą (np. maszynki do golenia, żyletki, nasiona soi, części do odkurzaczy etc.). Podzespoły i produkty elektroniczne zaczynają się na stronie 177. Można z dużą pewnością stwierdzić że nie ma praktycznie żadnego komponentu elektronicznego który nie zostałby nimi objęty. Na liście znajdują się gotowe produkty np.  zasilacze komputerowe (numer katalogowy z listy 8504.40.60) , karty graficzne (numer katalogowy z listy 8473.30.11),  płyty główne (numer katalogowy z listy 8473.30.11), kompletne konstrukcje systemowe, mosty sieciowe (numer katalogowy z listy 8473.30.11), dyski SSD (numer katalogowy z listy 8473.30.11), podkładki pod mysz (numer katalogowy z listy 8471.30.51), myszy komputerowe (numer katalogowy z listy 8471.60.90) i wiele innych.
+
+Analiza dokumentu jest dość trudna gdyż użyto terminologii prawniczo-technicznej znanej z wniosków patentowych. W tym kontekście karta graficzna czy płyta główna są opisane jako 
+
+“zespoły obwodów drukowanych, niezawierające lampy elektronowej, części maszyn z punktu 8471” a sama maszyna wskazana w punkcie 8471 ma szesnaście wariantów w tym m.in.  “Elektroniczne maszyny liczące, zawierające urządzenie drukujące” (8470.21.00), “Elektroniczne maszyny liczące, niezawierające urządzenia drukującego” (8470.29.00), “Jednostki wejściowe lub wyjściowe odpowiednie do fizycznego włączenia do maszyny lub urządzenia ADP w tym, nie wprowadzone z resztą systemu” (8471.60.70). 
+
+Dodatkowo niektóre pozycje są napisane w skomplikowany sposób utrudniający analizę  np.  klawiatury i myszy w pakietach zostają objęte cłami (8471.60.90) ale klawiatury sprzedawane osobno już nie. Spowodowane jest to użyciem liczby mnogiej przez autora dokumentu “Inne jednostki wejściowe lub wyjściowe maszyn cyfrowych ADP, nesoi, nie wprowadzane z resztą systemu”.  Trudno stwierdzić czy jest to celowe działanie dysydenta poprzedzone rzeczową dyskusją czy może błąd edycyjny. Biorąc pod uwagę zakres sankcji (produkty z chin warte rocznie 200 miliardów dolarów) nie ma to jednak  już takiego znaczenia. 
 
 ![img](/download/cla2.png)
 
