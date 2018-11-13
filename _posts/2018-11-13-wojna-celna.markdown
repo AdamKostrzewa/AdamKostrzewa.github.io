@@ -17,7 +17,7 @@ Dokument wprowadzający sankcje jest długi (194 strony) i w bardzo dokładny sp
 
 Analiza dokumentu jest dość trudna gdyż użyto terminologii prawniczo-technicznej znanej z wniosków patentowych.  Dodatkowo niektóre pozycje są napisane w skomplikowany sposób utrudniający analizę np. klawiatury i myszy w pakietach zostają objęte cłami, ale klawiatury sprzedawane osobno już nie.
 
-![img](/download/cla1.png)
+![img](/download/cla2.png)
 
 ​			*Przykładowe pozycje z listy celnej amerykańskiej organizacji handlu międzynarodowego.*
 
@@ -53,7 +53,7 @@ Unia Europejska nie planuje wprowadzenia taryf celnych. Produkty Xiaomi czy Huaw
 
  Oczywiście jest pewna grupa produktów na które USA ma praktycznie technologiczny monopol. Chodzi tu przede wszystkim o procesory wysokowydajnościowe np. w architekturze x86 (AMD, Intel) jak również karty graficzne (Nvidia, AMD). Jest bardzo prawdopodobne, że koncerny produkujące te komponenty będą próbowały amortyzować koszty przeniesienia produkcji poza Chiny okresowymi (bądź stałymi) podwyżkami cen tych produktów. To stanie się jednak szansą na nawiązanie konkurencji również w tym segmencie rynku dla azjatyckich gigantów np. Huawei, ZTE czy Samsunga, którzy już od dłuższego czasu przygotowywali się do tego kroku. Warto zauważyć że może oznaczać to rewolucję technologiczną gdyż już teraz supremacja USA w świecie elektroniki użytkowej nie jest oczywista jak choćby 10 lat temu. Na przykład bardzo łatwo wyobrazić sobie komputery osobiste oparte na architekturze RISC-V bądź ARM znanej z telefonów komórkowych i tabletów.
 
-![img](/download/cla2.png)
+![img](/download/cla1.png)
 
 ​			*Informacja firmy Gigabyte dla podwykonawców na temat nowych stawek celnych.*
 
