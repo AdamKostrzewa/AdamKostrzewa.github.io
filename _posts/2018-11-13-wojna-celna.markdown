@@ -13,8 +13,6 @@ Wojna celna wychodzi z fazy deklaratywnej w fazę aktywną. 17 września tego ro
 
 **Towary objęte nowymi cłami**
 
-Co zawiera lista
-
 Dokument wprowadzający sankcje jest długi (194 strony) i w bardzo dokładny sposób wyszczególnia wszystkie produkty objęte ustawą (np. maszynki do golenia, żyletki, nasiona soi, części do odkurzaczy etc.). Podzespoły i produkty elektroniczne zaczynają się na stronie 177. Można z dużą pewnością stwierdzić że nie ma praktycznie żadnego komponentu elektronicznego który nie zostałby nimi objęty. Na liście znajdują się gotowe produkty np.  zasilacze komputerowe (numer katalogowy z listy 8504.40.60) , karty graficzne (numer katalogowy z listy 8473.30.11),  płyty główne (numer katalogowy z listy 8473.30.11), kompletne konstrukcje systemowe, mosty sieciowe (numer katalogowy z listy 8473.30.11), dyski SSD (numer katalogowy z listy 8473.30.11), podkładki pod mysz (numer katalogowy z listy 8471.30.51), myszy komputerowe (numer katalogowy z listy 8471.60.90) i wiele innych.
 
 Analiza dokumentu jest dość trudna gdyż użyto terminologii prawniczo-technicznej znanej z wniosków patentowych. W tym kontekście karta graficzna czy płyta główna są opisane jako 
