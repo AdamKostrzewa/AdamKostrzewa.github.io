@@ -4,7 +4,8 @@ title:  "[Cyfrowy Raport Nr. 3] - Newsy, Linki i Tutoriale"
 date:   2018-10-29 09:38:12 +0200
 image: /download/PCB_Spectrum.jpg
 summary_large_image: /download/PCB_Spectrum.jpg
-categories: jekyll update
+categories: cyfrowyraport
+hidden: true
 ---
 
 
