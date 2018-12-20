@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "Intel Management Engine – jedyny “legalny” trojan sprzętowy?"
+date:   2018-12-20 09:00:12 +0200
+image: /download/me_placement.jpg
+summary_large_image: /download/me_placement.jpg
+categories: jekyll update
+---
+
+
+
+Intel ME od wielu lat wzbudza kontrowersje. Miał usprawnić pracę systemów, a tymczasem oskarżany jest o ich infiltrowanie. Ile prawdy jest w tych teoriach, jakie funkcje spełnia ten układ i czy jest bezpieczny?
+
+Management Engine (ME) został wprowadzony przez firmę Intel do produktów komercyjnych w 2006 roku. Od tego czasu jest stosowany w zdecydowanej większości systemów z produktami tej firmy. Jakie funkcje ma spełniać ten układ? [Cytując firmę Intel](https://www.intel.com/content/www/us/en/support/articles/000005974/software/chipset-software.html), jest to:
+
+> “mały, energooszczędny podsystem komputerowy […] który wykonuje różne zadania w czasie, gdy system główny jest w stanie uśpienia, podczas procesu uruchamiania oraz podczas pracy systemu.“
+
+Jak widać już ta definicja producenta jest niedokładna i tak naprawdę może oznaczać wszystko i nic, a to dopiero początek problemów z tym produktem.  ME to w dużej mierze nieudokumentowany kontroler główny procesora: współpracuje z firmware’em systemowym podczas rozruchu i ma bezpośredni dostęp do pamięci systemowej, ekranu, klawiatury i sieci.
+
+Producent nie informuje jednak o jego przeznaczeniu, funkcjach ani metodzie działania. Układ ma budowę zamkniętą, a kod tajny i zabezpieczony kryptograficznie. Przez wielu nazywany jest jedynym legalnym trojanem sprzętowym. Czy tak rzeczywiście jest? Skąd biorą się kontrowersje na temat Intel ME? Zanim przejdziemy do odpowiedzi na te pytania, podsumujmy najpierw potwierdzone informacje na temat ME.
+
+### Co wiadomo o Intel ME?
+
+Jak to zwykle bywa, mimo chęci producenta, aby układ ten pozostał “czarną skrzynką” wewnątrz naszego komputera, wiadomo już całkiem sporo na jego temat – w dużej mierze dzięki pracy niezależnych badaczy i pasjonatów, którzy powoli rewersują ME.
+
+Przede wszystkim nie ma jednego ME, a jest ich wiele. Cele i funkcje układu, a nawet jego fizyczne umiejscowienie zmienia się w zależności od generacji produktów Intela, z którą mamy do czynienia. Najczęściej można go znaleźć w [chipsecie](https://pl.wikipedia.org/wiki/Chipset), nazywanym w terminologii firmy Platform Controller Hub (PCH). Chipset – dla osób nie interesujących się na co dzień sprzętem – to zespół kilku ściśle powiązanych ze sobą układów scalonych i komponentów elektronicznych, które razem wykonują jedno określone zadanie. W przypadku PCH jest to zarządzanie przepływem danych pomiędzy procesorem, pamięcią i urządzeniami peryferyjnymi, co daje mu decydujący wpływ na wydajność całego systemu. W przypadku serii produktów o niskim poborze energii (np. seria *ultra-low-power* Broadwell, procesory z serii Skylake do zastosowań mobilnych) PCH został zintegrowany bezpośrednio z procesorem w formie systemu na chipe (ang. *system-on-chip*). W tych produktach (np. Intel Atom) również ME stał się częścią procesora. Oprogramowanie  układu (ang. *firmware*) jest skompresowane i podpisane cyfrowo w celu ochrony przed nieuprawnionymi manipulacjami.
+
+![img](/download/me_placement.jpg)
+
+Położenie Intel ME (kolor czerwony) we współczesnych architekturach Intela
+
+Jeśli chodzi o budowę wewnętrzną ME, to dużo informacji zawdzięczamy ostatnim wynikom niezależnych badaczy, np. [Dimitria Sklyarova](https://www.troopers.de/downloads/troopers17/TR17_ME11_Static.pdf), [Marka Ermolova czy Maxima Goryacha](https://www.blackhat.com/docs/eu-17/materials/eu-17-Goryachy-How-To-Hack-A-Turned-Off-Computer-Or-Running-Unsigned-Code-In-Intel-Management-Engine.pdf). Oprogramowanie ME działa na jednordzeniowym procesorze z architekturą x86. Jego podstawę stanowi zmodyfikowana wersja systemu MINIX, który w ten sposób stał się najprawdopodobniej [najczęściej używanym systemem operacyjnym na świecie](https://www.networkworld.com/article/3236064/servers/minix-the-most-popular-os-in-the-world-thanks-to-intel.html). Nie słyszeliście o nim? MINIX to system operacyjny o zastosowaniach szkoleniowych napisany przez Andrew S. Tanenbauma dla lepszego wyjaśnienia zagadnień z jego znanej książki “[Systemy operacyjne](https://helion.pl/ksiazki/systemy-operacyjne-wydanie-iv-andrew-s-tanenbaum-herbert-bos,sysop4.htm#format/d)”. Książka ta, obok “[Sieci komputerowych](https://helion.pl/ksiazki/sieci-komputerowe-wydanie-v-andrew-s-tanenbaum-david-j-wetherall,sieci5.htm#format/d)” tego samego autora, stała się podstawą dydaktyczną w większości uczelniach na świecie i w Polsce. Co ciekawe, firma “zapomniała” poinformować o użyciu systemu MINIX w większości swoich produktów profesora Tanenbauma. Poniżej fragment z [listu otwartego Andrew S. Tanenbauma do Intela](https://www.cs.vu.nl/~ast/intel/)(tłumaczenie własne):
+
+> “Dziękuje za umieszczenie wersji MINIX-a wewnątrz układu Intel ME-11 używanego przez prawie wszystkie nowsze komputery stacjonarne i laptopy na świecie. Myślę, że dzięki temu MINIX stał się najczęściej używanym systemem operacyjnym na świecie, popularniejszym niż Windows, Linux czy MacOS. Na dodatek nawet o tym nie wiedziałem, dopóki nie przeczytałem artykułu prasowego na ten temat.
+>
+> […]
+>
+> Było to dla mnie zupełną niespodzianką. Nie przeszkadzało mi to oczywiście i nie spodziewałem się żadnej zapłaty, bo też nie jest to wymagane. W licencji nie ma nawet żadnej sugestii, że byłaby ona mile widziana. Jedynie byłoby mi miło, gdyby po zakończeniu projektu i wdrożeniu układu scalonego ktoś z Intela powiedziałby mi, przez zwykłą uprzejmość, że MINIX będzie obecnie prawdopodobnie najczęściej używanym systemem operacyjnym na świecie na komputerach x86.”
+
+Oprócz MINIXA na rdzeniu ME uruchomiona jest wirtualna maszyna Javy. ME działa z tzw. uprawnieniami pierścienia -3. Jest to żartobliwe nawiązanie do klasycznej ochrony pierścieniowej architektury x86, gdzie kernel pracuje w pierścieniu zero, a kod użytkownika w pierścieniu 3. Oznacza to, że ME ma pełen dostęp do wszystkich urządzeń i całej przestrzeni adresowej (np. CPU/iGPU/USB/DDR/PCI ), jak również działa, gdy cały system jest wyłączony. Teoretycznie, jeśli piszesz na klawiaturze podłączonej do wyłączonego komputera, Intel ME może pracować jako keylogger i wysyłać informacje o naciśniętych klawiszach do zewnętrznych serwerów. Kod startowy ME znajduje się zazwyczaj w tej samej pamięci SPI-Flash co kod UEFI BIOS-u.
+
+### Co takiego złego jest w tym układzie i skąd się bierze ostra krytyka?
+
+Dużo mniej jest wiadomo o funkcjach logicznych Management Engine. W nowszych systemach Intela ME jest aktywny podczas inicjalizacji systemu (a nawet przed uruchomieniem głównego procesora), a według producenta jego działanie  ma kluczowy wpływ na funkcjonalność i wydajność chipsetu. W tabelce przedstawiam zestawienie najważniejszych funkcji logicznych układu, które udało się ustalić na podstawie doniesień prasowych, publikacji konferencyjnych i oficjalnych informacji od producenta. Jak widać, jest tego całkiem dużo.
+
+| **Funkcja**                                 | **Opis**                                                     |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| Active Management Technology (AMT)          | Zdalne zarządzanie systemem, w tym dostęp ze zdalnym KVM, przekierowaniem szeregowym (SoL) i przekierowaniem IDE (IDE-R), tylko chipsety Q oraz C206, C226, C236, zdalne KVM tylko z Core i5/i7/Xeon |
+| Anti-Theft Technology (AT-p)                | Ochrona przed kradzieżą, wymaga dodatkowego oprogramowania i rejestracji u usługodawcy |
+| Small Business Advantage (SBA)              | Funkcje zarządzania, takie jak bloker USB, tylko chipsety B  |
+| Identity Protection Technology (IPT)        | Kilka indywidualnych funkcji, np. bezpieczne wprowadzanie haseł internetowych za pomocą klawiatury ekranowej, jednorazowy generator haseł (One-Time Password, OTP) |
+| Intel Management and Security Status (IMSS) | Narzędzie, które wyświetla funkcje i stan oprogramowania sprzętowego ME |
+| Protected Audio Video Path (PAVP)           | Windows DRM dla danych chronionych przed kopiowaniem         |
+| Extreme Tuning Utility (XTU)                | Narzędzie do overclockingu                                   |
+| Intel Desktop Utilities (IDU)               | Monitoring sprzętu (napięcia, temperatury, prędkości wentylatorów) |
+| Trusted Execution Technology (TXT)          | W połączeniu z oddzielnym TPM zabezpieczenie oprogramowania nadzorcy (ang. *hypervisor*) przed rootkitami |
+| Intel Boot Guard                            | Producenci komputerów PC mogą używać kodu BIOS dla zapewnienia bezpieczeństwa kryptograficznego |
+| Firmware-TPM 2.0 (fTPM 2.0)                 | Moduł zaufanej platformy (TPM), zaimplementowany w firmware  |
+| Trusted Execution Engine (TXE)              | Interfejs programowy dla funkcji TPM-2.0 ME                  |
+| Platform Trust Technology (PTT)             | Funkcje TPM-2.0 ME                                           |
+| Wake on LAN (WOL)                           | Budzenie komputera poprzez Ethernet (w interakcji z układem sieciowym) |
+
+Skąd zatem krytyka tak “pożytecznego” urządzenia jak ME? Jak widać, zakres funkcji logicznych jest bardzo szeroki, a ich dokładne działanie w większości nieznane i nieudokumentowane. Równocześnie układ ME pracuje niezależnie i równolegle do uruchomionego systemu, a co najważniejsze zupełnie poza jego kontrolą. Ponadto posiada on dostęp do całości fizycznej pamięci RAM, wszystkich interfejsów i systemów (magistrala PCI Express, USB, SATA etc.), a także do sieci.
+
+Niekontrolowany układ z niejasną funkcjonalnością i dostępem do wszystkich danych i urządzeń systemu stanowi potencjalnie bardzo duże zagrożenie dla bezpieczeństwa. Co jeśli zawiera luki bezpieczeństwa lub ma wbudowanego backdoora? Jak wiadomo, tego typu rozwiązanie jest w sprzeczności z podstawowymi zasadami architektury bezpieczeństwa systemów teleinformatycznych. Co więcej, ME jest używany do zabezpieczenia kodu BIOS-u UEFI i kontroli procesu bezpiecznego bootowania (ang. *secure boot*). W związku z tym teoretycznie Intel ma możliwość decydowania, jaki system operacyjny i firmware wolno uruchomić na danej maszynie, a nawet zdalnie uniemożliwić jej start. Taka funkcjonalność pozbawia użytkownika prawa do pełnej kontroli systemu (tzw. prawa nadrzędności) zalecanej przez ustawodawstwo większości krajów unijnych dla infrastruktury krytycznej, np. przez [niemiecki KRITIS](https://www.bsi.bund.de/DE/Themen/Industrie_KRITIS/KRITIS/Strategie/KRITIS/kritischeinfrastrukturen_node.html).
+
+### Czy da się wykorzystać ME do ataków i jakie są znane luki?
+
+Po pierwsze, krytyczna luka w ME będzie bezpośrednio dawała dostęp do całości systemu ze względu na uprawnienia i sposób działania układu. Na przykład atakujący może modyfikować zawartość pamięci tak w DRAM-ie, jak i podczas zapisu (przechwytywać i zmieniać instrukcje), eksfitrować dane i wysyłać na zewnątrz np. przez WLAN. Dodatkowo ME ma uprzywilejowany dostęp do wszystkich komponentów tej firmy, jak choćby do popularnych “wbudowanych” interfejsów  sieciowych Intela. Ponadto wszystkie te akcje dzieją się poza kontrolą systemu operacyjnego i oprogramowania na nim działającego, np. antywirusa. ME działa na niższym poziomie logicznym i jest transparentny dla reszty systemu. W skrócie, skompromitowany układ ME to marzenie każdego atakującego, a ME z funkcją backdoora byłby potwierdzeniem większości teorii o braku bezpieczeństwa bez pełnej kontroli nad procesem produkcyjnym.
+
+Czy jest się zatem czego bać? Trzeba powiedzieć, że jeśli chodzi o stworzenie zabezpieczonego układu o zamkniętej architekturze, to Intel dokonał prawie niemożliwego. W ciągu pierwszych dwunastu lat od premiery układu znaleziono tylko  [jedną lukę umożliwiającą wykonanie dowolnego kodu na ME](https://invisiblethingslab.com/resources/bh09usa/Ring%20-3%20Rootkits.pdf), a i tu sukces nie jest pełny, gdyż jej wykorzystanie wymaga fizycznego dostępu do maszyny. [Specjaliści od bezpieczeństwa zdołali zmodyfikować firmware ME](http://blog.ptsecurity.com/2018/01/running-unsigned-code-in-intel-me.html) dla niektórych wersji produktów Intela. Kod ME musi być jednak odczytany bezpośrednio z pamięci SPI-Flash BIOS-u, a po edycji zapisany na nowo za pomocą specjalnego adaptera. Do końca 2017 Intel poinformował o dziewięciu lukach, z których jednak tylko dwie mają status krytyczny dla bezpieczeństwa systemu ([SA-00075](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00075.html), [SA-00086](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00086.html)) i umożliwiają eskalację uprawnień. W tej kwestii rok 2018 wydaje się ciekawy, gdyż w tle medialnego zgiełku związanego z lukami Meltdown i Spectre Intel w lipcu opublikował kolejne łatki do ME, które przeszły jednak bez większego medialnego echa.
+
+Pierwsza podatność, [CVE-2018-3627](https://nvd.nist.gov/vuln/detail/CVE-2018-3627), jest błędem logicznym, który pozwala na wykonanie dowolnego kodu na maszynach Intel. Według rosyjskiej firmy Positive Technologies, która w ubiegłym roku znalazła podobny błąd w ME, nowa luka jest łatwiejsza do wykorzystania. Napastnik potrzebuje tylko lokalnego dostępu do maszyny, aby móc użyć Intel ME. [CVE-2018-3628](https://nvd.nist.gov/vuln/detail/CVE-2018-3628) to drugi błąd ujawniony przez Intela. Luka umożliwia “w pełni zdalne wykonanie kodu w procesie AMT należącym do ME”. Ponadto, w przeciwieństwie do CVE-2017-5712, który Positive Technologies odkryła w zeszłym roku, atakujący nie potrzebuje nawet konta administratora AMT. Na szczęście funkcjonalność AMT jest dostępna tylko w niewielkiej części systemów, a i tam można ją w najgorszym wypadku wyłączyć.
+
+Bez wątpienia uniwersalny exploit umożliwiający zdalne wykonywanie kodu poprzez Management Engine jest jednym ze “świętych grali” współczesnych architektur bezpieczeństwa. Jego wdrożenie spowodowałoby, że napastnik miałby pełną kontrolę nad każdym aspektem każdego systemu z chipsetem Intela wyprodukowanego w ostatniej dekadzie.
+
+### Czy mogę wyłączyć Intel ME?
+
+Nie ma takiej możliwości. Intel nie przewiduje opcji wyłączenia ME. Brak ME fizycznie uniemożliwia uruchomienie systemu. Co można zatem zrobić? W najlepszym przypadku niektóre funkcje ME mogą być wyłączone lub skonfigurowane. [Przypadkowo okazało się](http://blog.ptsecurity.com/2017/08/disabling-intel-me.html), że NSA wymaga wyłączenia większości funkcji ME (High Assurance Platform, HAP) dla własnych komputerów. Dezaktywacja jest zatem możliwa, ale Intel odmawia jej zwykłym nabywcom komputerów PC i laptopów, nie dokumentując jej i nie zapewniając wsparcia. Co ciekawe, firma Dell oferuje amerykańskim agencjom i instytucjom rządowym (np. NSA i wojsku) produkty z  opcjonalnym “dezaktywowanym” ME. Chodzi tutaj przypuszczalnie o te same urządzenia HAP (tym razem z dokumentacją). Teoretycznie pin przełącznika dla platformy HAP (potwierdzony oficjalnie przez Intela) umożliwia wyłączenie wielu funkcji ME bez awarii systemu. Ale nawet po ustawieniu bitu HAP, niektóre z podatności opisanych w SA-00086 mogą nadal być wykorzystywane.
+
+### Mam procesor AMD, a więc mnie to wszystko nie dotyczy!
+
+Niestety i to twierdzenie nie jest zgodne z prawdą co najmniej od roku 2014, kiedy AMD wprowadziło na rynek generację Mullins swoich produktów. Wtedy to we wszystkich procesorach firmy został zintegrowany mikrokontroler ARM Cortex-A5 z rozszerzeniem TrustZone nazywanym procesorem bezpieczeństwa PSP (ang. *platform secure procesor*). Podobnie jak w przypadku Intel ME, działa na nim firmware BLOB (Binary Large Object), który implementuje na przykład funkcję fTPM 2.0. I niestety, podobnie jak w przypadku ME, ten układ nie jest w udokumentowany i nie może być wyłączony, a wiadomo o nim jeszcze mniej niż o ME. Oficjalny funkcjonalny zakres pracy procesora PSP jest znacznie mniejszy niż procesora ME, ale PSP ma takie same uprawnienia w dostępie do systemu. Jednak do tej pory liczba udokumentowanych podatności w systemach wykorzystujących ten układ jest znikoma.
+
+### Wnioski końcowe
+
+Intel Management Engine miał usprawnić komunikację, poprawić wydajność i generalnie wyjść naprzeciw oczekiwaniom użytkowników. Jednak dziwna polityka firmy, pełna niejasności i niedomówień, skutkuje coraz większą ilością spekulacji i teorii spiskowych. Jak dotąd nie ma jednoznacznych dowodów na to, by Intel ME posiadał funkcje backdoora. Na pewno skala uprawnień układu ME i jego zamknięta budowa powodują, że architektury, w których jest użyty, automatycznie stoją w sprzeczności z zasadami budowy infrastruktury bezpieczeństwa, w tym krytycznej. Na szczęście, jak na razie układ jest dobrze zabezpieczony – jak dotąd nie ma możliwości zdalnego wykonania kodu na ME. Skąd o tym wiemy? Wciąż nie zaobserwowano nowego botnetu kopiącego bitcoiny na większości komputerów na świecie.
+
+Na koniec [oddajmy jeszcze raz głos  Andrew S. Tanenbaumowi](https://www.cs.vu.nl/~ast/intel/), którego [książkę](https://helion.pl/ksiazki/systemy-operacyjne-wydanie-iv-andrew-s-tanenbaum-herbert-bos,sysop4.htm) (a przynajmniej jej fragmenty) czytała większość czytelników tej strony:
+
+> “Dyskusja prowadzona w internecie odeszła za daleko od tez mojego listu otwartego. Chciałbym potwierdzić, że kiedy Intel skontaktował się ze mną, nie poinformował mnie, nad czym pracują pracownicy firmy. Firmy rzadko rozmawiają o przyszłych produktach bez umowy poufności. Pomyślałem, że to nowy interfejs ethernetowy, układ graficzny lub coś takiego. Gdybym podejrzewał, że mogą budować silnik szpiegowski, na pewno nie wyraziłabym zgody na jakąkolwiek współpracę, chociażby chodziło o niewielkie modyfikacje (prosili o zmniejszenie ilości niezbędnej pamięci). Myślę, że wprowadzenie w życie rzeczywistości znanej z książki “Rok 1984” George’a Orwella to bardzo zły pomysł, nawet jeśli będzie on przesunięty w czasie o około 30 lat. Ludzie powinni mieć pełną kontrolę nad własnymi komputerami, a nie firma Intel i nie rząd. W Stanach Zjednoczonych czwarta poprawka wyjaśnia bardzo wyraźnie, że rząd nie może mieć dostępu do czyjejś własności bez nakazu przeszukania. W wielu innych krajach obowiązują prawa dotyczące prywatności, tworzone w tym samym duchu. Umieszczanie potencjalnego szpiega w każdym komputerze jest straszliwym osiągnięciem.”
+
+*Artykuł był opublikowany również w serwisie [zaufanatrzeciastrona.pl](https://zaufanatrzeciastrona.pl/post/intel-management-engine-jedyny-legalny-trojan-sprzetowy/).*
