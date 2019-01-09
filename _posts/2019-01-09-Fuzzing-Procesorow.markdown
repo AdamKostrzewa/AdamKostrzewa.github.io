@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fuzzing Procesorów - Wstęp, Cele i Zasady "
-date:   2018-01-09 09:00:12 +0200
+date:   2019-01-09 09:00:12 +0200
 image: /download/chips.jpg
 summary_large_image: /download/chips.jpg
 categories: jekyll update
