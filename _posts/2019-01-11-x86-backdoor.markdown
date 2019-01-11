@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "Backdoor w architekturze x86 dla początkujących"
+date:   2019-01-11 09:00:12 +0200
+image: /download/x86_picture.jpg
+summary_large_image: /download/x86_picture.jpg
+categories: jekyll update
+---
+
+O możliwości implementacji backdoorów sprzętowych w komercyjnie dostępnych produktach, np. procesorach, dyskutuje się [już od dawna](https://danluu.com/cpu-backdoors/). Poniższy artykuł przedstawia wprowadzenie do zasad działania zagrożeń tego typu i prezentuje szkoleniowe wdrożenie backdoora dla [architektury x86](https://en.wikipedia.org/wiki/X86). Celem jest udowodnienie, że relatywnie prosta implementacja backdoora w CPU pozwala ominąć mechanizmy bezpieczeństwa w większości obecnie używanych systemów i jest trudna (a także kosztowna) do wykrycia. Atak w oparciu o taki układ może przeprowadzić użytkownik z bardzo ograniczonymi uprawnieniami dostępowymi z poziomu oprogramowania (bez fizycznego dostępu do sprzętu). W tekście nie rozważamy czy zagrożenia tego typu występują w komercyjnie dostępnych produktach, tylko prezentuje studium technicznej wykonalności układu.
+
+Artykuł rozpoczyna krótkie podsumowanie zasad i mechanizmów bezpieczeństwa stosowanych w architekturze x86. W następnej części przedstawiamy cele i zasady działania ataku dokonanego w oparciu o backdoor w CPU.  Na koniec przeanalizujemy możliwy schemat eskalacji uprawnień, dokonanego w oparciu o zaprojektowany układ.
+
+ 
+
+**Powtórka z mechanizmów bezpieczeństwa w architekturze x86**
+
+Bezpieczeństwo większości współczesnych programowalnych systemów komputerowych opiera się na założeniu, że procesor funkcjonuje według ściśle określonego i znanego zestawu zasad. Zasady te są wdrożone w postaci mechanizmów sprzętowych umożliwiających kontrolę dostępu (wykonania) aplikacji użytkownika - dlatego nie ma możliwości ich zmiany podczas wykonywania programu. Najpopularniejszym przykładem i najczęściej wykorzystywanym mechanizmem jest ochrona pierścieniowa (*ang. protection rings*), patrz Figura 1, wprowadzona już w latach 70tych na potrzeby systemu MULTICS i stosowana obecnie w większości systemów operacyjnych (np. UNIX, Linux, Windows i pochodne) dla architektury x86. W momencie uruchomienia maszyny system operacyjny bądź oprogramowanie nadzorcy (*ang hypervisor*) mają pełen dostęp do wszystkich zasobów – całego zestawu instrukcji niskopoziomowych, urządzeń peryferyjnych, rejestrów. Ten tryb pracy procesora jest nazywany w nomenklaturze architektury x86 trybem chronionym (*ang. protected mode*). Podczas startu ustalane są zasady dostępu do zasobów, np. obsługa przerwań, i ograniczenia dla aplikacji użytkownika. Następnie procesor przestawiany jest w inny tryb pracy w którym dostęp do zasobów, np.: instrukcji i adresów, jest ograniczony a aplikacja jest wykonywana w wirtualnej przestrzeni adresowej.
+
+![](/download/image003-300x184.png) 	
+
+*Rysunek	1: Tryby pracy procesora w architekturze x86*
+
+Architektura x86 definiuje cztery tryby pracy procesora - cztery różne pierścienie uprawnień, ponumerowane od 0 (najbardziej uprzywilejowane - tryb jądra) do 3 (najmniej uprzywilejowane - tryb użytkownika). Kod jądra systemu jest zwykle uruchomiony w pierścieniu 0, podczas gdy kod użytkownika zazwyczaj działa w pierścieniu 3. W dokumentacji technicznej Intela do określenia poziomu uprawnień kodu uruchomionego na procesorze używa się skrótu CPL (*ang. Current Privilege Level*). Pozostałe dwa poziomy pośrednie (pierścień 1 i 2) są bardzo rzadko używane w praktyce - stosuje się je głównie dla pewnych usług systemowych i parawirtualizacji, należą jednak do trybu chronionego pracy procesora.
+
+Aby zmienić tryb pracy procesora należy nadpisać w przestrzeni adresowej strukturę GDL (Global Descriptor Table) która min. zawiera odnośniki (deskryptory) do bloków (segmentów) pamięci. Deskryptory  definiują adres bazowy, typ (kod lub dane), rozmiar i numer pierścienia (zwany "DPL segmentu") który musi być aktywny podczas pracy procesora aby można było uzyskać dostęp do segmentu. Wskaźnik na strukturę w GDT nazywany jest selektorem segmentów.
+
+Użytkownik nie może zmieniać trybów pracy procesora (pierścieni) samodzielnie.  Przełączenie trybów odbywa się: 1) na potrzeby konkretnej operacji za pomocą wywołań systemowych (ang. syscall) według zasad zaprogramowych przez system w fazie startu maszyny (zanim przeszła w tryb użytkownika) np.: przerwań programowych bądź 2) w momencie wykonania niedozwolonej instrukcji na zasadzie wyjątku (EXCEPTION). W pierwszym przypadku aplikacja użytkownika wywołuje odpowiednią instrukcje z operandą określającą rodzaj przerwania. Następnie procesor automatycznie przechodzi w tryb jądra i na podstawie numeru przerwania wczytuje odpowiednią funkcję np.: w architekturze x86 dzieje się to przy wykorzystaniu tablicy przerwań (*ang. interrupt descriptor table (IDT)*). Zakończenie wywołania powoduje ponowną zmianę trybu pracy procesora z trybu jądra do użytkownika.  W sytuacji wyjątku procesor automatycznie wywołuje odpowiednie przerwanie. Aplikacja nie ma możliwości zmiany obsługi przerwań, gdyż w tym trybie użytkownika ma ograniczony dostęp do pamięci, np. poprzez wirtualizację za pomocą segmentacji i stronicowania, która nie pozwala na nadpisanie pamięci. Znacznik trybu pracy procesora może dodatkowo różnicować aplikacje.  
+
+
+
+**Cele Atakującego**
+
+Poniższa sekcja prezentuje założenia i ogólny opis backdoora który mógłby zostać wprowadzony do architektury x86 celem eskalacji uprawnień wykonywanego kodu. W tekście nie rozważamy czy zagrożenia tego typu występują w komercyjnie dostępnych produktach, tylko prezentujemy studium technicznej wykonalności zagrożenia tego typu.
+
+**Cel podstawowy.** Zakładamy że atakujący jest zwykłym użytkownikiem maszyny, tzn. jego kod będzie wykonywany przez procesor pracujący w najniższym pierścieniu (3). Celem ataku będzie zatem eskalacja uprawnień kodu wykonywanego na procesorze do trybu jądra, tzn. pierścienia 0 (w architekturze IA/32e).  
+
+**Cele dodatkowe.** Intuicja podpowiada nam, że backdoor sprzętowy będzie skuteczny tylko jeśli wiedzę o nim będzie posiadała wąska grupa wybranych osób. Dlatego atakujący będzie chciał by aktywacja backdoora wymagała zestawu akcji których prawdopodobieństwo wystąpienia w sposób przypadkowy bądź w efekcie celowego poszukiwania (np. fuzzing) jest odpowiednio niskie. Do uruchomienia backdoora nie będą potrzebne też żadne specjalne uprawnienia w warstwie sprzętowej by umożliwić dostęp do niego z trzeciego pierścienia.  
+
+Współczesny procesor można kontrolować za pomocą rejestrów, instrukcji albo danych które ustalają bieżący stan pracy układu. W rezultacie, dowolna kombinacja tych elementów może być użyta do zaimplementowania i późniejszego aktywowania backdoora. Wybór i typ sekwencji aktywującej mają decydujący wpływ na skuteczność rozwiązania jak i na koszty w tym łatwość wykrycia.  
+
+W tym kontekście, backdoor może zostać uruchomiony przez wybraną instrukcję procesora (*ang. processor instruction*) zaprogramowaną za pomocą assemblera. Warunkiem jest by instrukcja ta mogła zostać uruchomiona na procesorze pracującym w trybie użytkownika (pierścień 3), tzn. nie jest uprzywilejowaną. Dodatkowo aktywacja backdoora przez uruchomienie instrukcji będzie możliwa tylko jeśli procesor będzie znajdował się w wybranym przez nas stanie. Ten warunek wprowadzamy by uniknąć przypadkowego uruchomienia bądź prostego wykrycia mechanizmu za pomocą np. fuzzingu. Stan procesora jest w tym kontekście zdefiniowany przez aktualny przebieg wykonania instrukcji w potoku jak i zawartość rejestrów.  
+
+Sama zmiana rejestru stanu procesora, w przypadku x86 chodzi o CPL,  następuje przez odpowiednią modyfikację potoku na poziomie sprzętowym, tzn. dodanie odpowiednich bramek i układów. Poniższy artykuł koncentruje się na warstwie softwarowej ataku, pomijając detale modyfikacji potoku z dwóch przyczyn. Po pierwsze zdecydowana większość procesorów x86 ma zamkniętą architekturę o bardzo wysokim poziomie skomplikowania (produkty Intela i AMD) tzn. nie ma dostępu do źródeł a nawet gdyby był to prawie na pewno poziom złożoności wykraczałoby poza możliwości amatorskiego programisty. Po drugie niniejszy opis umożliwia w pełni modyfikacje emulatora architektury x86 (np. Qemu) co daje praktycznie każdemu możliwość przetestowania skutków działania tego typu zagrożenia w praktyce. Zachęcam w tej kwestii do samodzielnych testów i modyfikacji.  
+
+
+
+**Implementacja Backdoora**
+
+Dla prostoty opisu zakładam że atak przeprowadzony jest na procesorze 32 bitowym. Prezentowana metodyka będzie jednak taka sama dla procesorów 64-bitowych a atak można w prosty sposób ekstrapolować na procesory 64 bitowe pracujących w  trybie programowym IA/32e. Do przeprowadzenia ataku trzeba wykonać następujące akcje:
+
+- wprowadzenie 	 procesora w wybrany stan (np. poprzez załadowanie odpowiednich 	wartości do rejestrów) i wykonanie wybranej instrukcji 	(niskopoziomowej)
+- eskalacja 	uprawnień do pierścienia 0 dokonana za pomocą wybranego układu 	logicznego zaimplementowanego w sprzęcie ([bądź 	modyfikacja emulatora Qemu](https://adamkostrzewa.github.io/jekyll/update/2018/05/31/sparc-qemu-trojan.html))
+- wstrzyknięcie 	i wykonanie złośliwego kodu np. zmieniającego uprawnienia 	aktualnie wykonywanego procesu
+- powrót 	procesora do wyjściowego stanu - pierścień 3 i tryb użytkownika
+
+Ostatni punkt jest ważny. Podczas pracy w trybie uprzywilejowanym (pierścień 0) wywołania systemowe nie działają. W związku z tym każde wywołanie systemowe (np. exit()) może doprowadzić spowodować awarię systemu (chyba że to właśnie jest celem atakującego). Prowadzi to do niestabilnej pracy systemu która może zakończyć się awarią wymagającą restartu maszyny np. słynny błąd “Unable to handle kernel NULL pointer dereference”.  
+
+Jako instrukcje aktywującą wybieramy instrukcję *salc* (opcode 0xd6). Jest to tzw. instrukcja nieudokumentowana która przez długi czas (do architektury Pentium Pro) nie była wymieniona w żadnej oficjalnej dokumentacji wydanej przez producenta procesora. To redukuje szanse na jej przypadkowe użycie. Instrukcja *salc* zmienia wartość rejestru AL procesora w zależności od jego stanu stanu. Konkretnie chodzi o zmianę wartości flagi przeniesienia (ang. carry flag). Flaga przeniesienia wskazuje na to czy wynik aktualnie wykonanej operacji zawiera się w większej liczbie bitów niż ta która jest wspierana przez architekturę.  
+
+By dodatkowo utrudnić wykrycie zagrożenia, wprowadzimy procesor w wybrany stan zdefiniowany wartościami rejestrów EAX, EBX, ECX i EDX. Rejestry te są rejestrami danych procesora dostępnymi w trybie użytkownika. Użycie czterech rejestrów powoduje że prawdopodobieństwo uzyskania takiego stanu w sposób przypadkowy jest bardzo niskie (2^-128) a nie należy zapominać że dodatkowo trzeba określić jeszcze instrukcję aktywującą, czyli w tym konkretnym przypadku instrukcję salc. Oczywiście w praktyce stany rejestrów nie są do końca niezależne. Na przykład, EAX jest często używany do przechowywania kodów powrotnych (ang. return code) wykonywanych aplikacji a ECX stosuje się do przechowywania wartości licznika pętli (ang. loop counter). Ponadto niektóre funkcje zmieniają zawartość jednego rejestru bazując na zawartości innego. Mimo wszystko jeśli opcode aktywujący backdoora nie jest powiązany z wybranymi przez nas rejestrami to z dużą pewnością możemy założyć że prawdopodobieństwo przypadkowego wykrycia zagrożenia jest w praktyce bardzo niskie (a na pewno bardzo kosztowne).
+
+Wykonanie opisanego powyżej backdoora w pseudokodzie można przedstawić w następujący sposób:
+
+![pic02](/download/x86_02.png)
+
+W praktyce pseudokod musi być zaimplementowany sprzętowo (za pomocą dedykowanego układu) albo poprzez modyfikację maszyny stanów w emulatorze Qemu. Podczas wykonania instrukcji salc najpierw sprawdzamy zawartość wybranych rejestrów. Jeśli wartości EAX, ECX, EDX, EBX wynoszą odpowiednio 0xABABABAB, 0xACACACAC, 0xBABABABA i 0xBABABABA zmieniamy tryb pracy procesora (CPL) na 0 by przejść do trybu chronionego.
+
+Jak widać logiczny poziom skomplikowania backdoora jest dość niski co umożliwia tanią i prostą implementację sprzętową. Po aktywacji backdoora kod wykonywanego programu ma dostęp do całej przestrzeni adresowej i wszystkich urządzeń systemu. Oczywiście w przypadku większości systemów zadanie nadpisania bądź modyfikacji kodu wykonywanych aplikacji nie jest tak proste jakby się mogło wydawać. Jest to związane z mechanizmami kontroli dostępu do pamięci maszyn wirtualnych bądź systemu operacyjnego w którym kod jest uruchomiony.  
+
+W przypadku oprogramowania uruchomionego na architekturze x86, atakujący powinien  w tablicy GDT znaleźdź segment danych o największym rozmiarze (który teoretycznie powinien pokrywać całą wirtualną przestrzeń adresową). Niestety adres (położenie) tego segmentu zmienia się w zależności od konkretnej implementacji tzn. typu i wersji użytego systemu bądź oprogramowania nadzorcy. Najprostszą metodą na rozwiązanie tego problemu jest sprawdzenie zawartości GDT na innej maszynie pracującej z wykorzystaniem tego samego oprogramowania co atakowany system do której atakujący posiada pełne prawa dostępu. Następnie atakujący musi znaleźć odpowiednie adresy wirtualne odpowiedzialne za struktury (np. wywołania  systemowe, zmienne) które muszą zostać napisane w atakowanym systemie by obniżyć (usunąć) mechanizmy bezpieczeństwa w oprogramowaniu.   
+
+Po wykonaniu wstrzykniętego kodu, atakujący powinien wrócić z ustawieniami procesora do trybu użytkownika (pierścień 3) by system pozostał stabilny. Jest to możliwe przez nadpisanie odpowiednich segmentów w pamięci tak jak robią to przerwania systemowe. Alternatywnym rozwiązaniem byłoby po prostu poszerzenie działania backdoora o dodatkową akcję zmieniająca CPL. Poniżej alternatywna implementacja backdoora w pseudokodzie uwzględniającym powrót do pierścienia 3:
+
+​								![pic03](/download/x86_03.png) 
+
+Użycie backdoora aktywującego backdoor w asemblerze dla architektury x86 wyglądałoby następująco:
+
+![pic04](/download/x86_04.png)
+
+
+
+**Alternatywne sposoby ataku**
+
+Alternatywnym rozwiązaniem do prezentowanego backdoora zaimplementowanego za pomocą rzadziej używanych instrukcji i konkretnego stanu procesora, jest użycie często wykonywanej instrukcji, np. add z konkretnymi operandami i zmiana trybu pracy “w tle” tzn. bez modyfikacji wyniku działania tej konkretnej operacji. Umożliwia to lepsze ukrycie układu przed narzędziami do statycznej analizy kodu. Możliwe (acz skomplikowane a przez to drogie) są też rozwiązania w których zestaw wejść aktywujących backdoor jest ustalany podczas wykonania kodu (tzn. uruchomienie tego samego kodu dwa razy da inny wynik). Podstawowym kompromisem projektowym jest tutaj wielkość designu – im bardziej skomplikowana sekwencja aktywująca backdoor tym większe zasoby sprzętowe niezbędne do jej realizacji. Obrona przed backdoorami jest skomplikowana i kosztowna gdyż bardzo trudno znaleźć funkcje nie opisana w podręczniku architektury. Jedynym wyjściem w takim wypadku jest fuzzing ale biorąc pod uwagę wielkość współczesnych architektur (np. Intela) sprawdzenie wszystkich stanów procesora (w tym i tych mniej oczywistych dostępu pamięci, spadków napięć etc.) wydaje się być praktycznie niemożliwe a na pewno bardzo kosztowne. Ostatecznym rozwiązaniem wydaje się być fizyczna inżynieria wsteczna (np. użycie lasera i mikroskopu) która to rokuje największe szanse powodzenia. Metoda taka jest jednak najbardziej kosztowna i skomplikowana. Wymaga ona bowiem specjalistycznego sprzętu i doświadczonego personelu. Przeciwdziałanie tak zaimplementowanym backdoorom   jest trudne.  Przy implementacji użyłem instrukcji z architektury x86 które są dozwolone w trybie użytkownika (pierścień 3) więc trzeba interpretować cel działania aplikacji. Jeśli sekwencja aktywująca jest znana można na poziomie kompilacji próbować ja „odfiltrować” ale w przypadku krytycznych instrukcji typu add może być to niemożliwe.
+
+ 
+
+**Podsumowanie**
+
+Backdoory sprzętowe mają cztery właściwości które powodują że stanowią duże zagrożenie. Ich implementacje są bardzo krótkie (zwiększenie wielkości powierzchni chipa o mniej niż 1%); mogą być łatwo dodane i dobrze zamaskowane jeśli projektant jest jednocześnie twórcą konkretnej implementacji bądź ma dostęp do całości dokumentacji. Wykorzystanie podatności jest proste a jej odnalezienie bardzo skomplikowane (a w wielu przypadkach praktycznie niemożliwe). Dodatkowo producent może zawsze tłumaczyć nie „standardowe” działanie procesora błędami w konstrukcji (czyli zwykłymi bugami). Dlatego wiele rządów decydują się na rozwój własnych procesorów nawet jeśli możliwości ich rynkowego sukcesu są ograniczone.
+
+*Artykuł był opublikowany w materiałach towarzyszących [PUT Security Day](https://www.meetup.com/pl-PL/Poznan-Security-Meetup/events/255244492/?fbclid=IwAR2bYE2uH7M6UsCT2c_5qT7jGfhIIEa9mBiOKb_PtrcyuZM3CdvOPioEOxI) .*
