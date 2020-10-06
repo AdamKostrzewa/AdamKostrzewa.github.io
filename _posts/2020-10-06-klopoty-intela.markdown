@@ -88,7 +88,7 @@ Konkurencja robi to inaczej. Nvidia, AMD albo ARM tylko projektują urządzenia 
 
 Jednak nie wolno zapomnieć o tym, że to integracja pionowa a nie pozioma, umożliwia daleko idącą optymalizację produktu. Jeśli wiemy w jaki sposób coś jest wytwarzane albo wykorzystywane możemy dobierać rozwiązania techniczne tak by poprawiały wydajność bądź ograniczyły koszty produkcji. Mamy więc zatem klasyczną zależność “coś za coś”.
 
-**TSMC i rewolucja lat 90tych **
+**TSMC i rewolucja lat 90tych**
 
 W panteonie sławy elektroniki cyfrowej na pewno będzie miejsce dla ludzi takich jak wspomniani Robert Noyce, Gordon Moore czy Jack Kilby. Jednak jest też jedna osoba o której niewiele się mówi a zasługuje, przynajmniej moim zdaniem, na uwagę. Jest nią Morris Chang, były pracownik Texas Instruments, który na zlecenie rządu tajwańskiego doprowadził do rewolucji procesów produkcyjnych na rynku elektroniki. W rezultacie integracja pionowa została zdetronizowana na rzecz integracji poziomej która dominuje obecnie.
 
