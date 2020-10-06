@@ -2,8 +2,8 @@
 layout: post
 title:  "Kłopoty Intela i rewolucja TSMC"
 date:   2020-10-06 08:38:12 +0200
-image: /download/tekst_html_7a1fddc154f1a3fb.png
-summary_large_image: /download/tekst_html_7a1fddc154f1a3fb.png
+image: /download/tekst_html_7a1fddc154f1a3fb.jpg
+summary_large_image: /download/tekst_html_7a1fddc154f1a3fb.jpg
 categories: jekyll update
 ---
 
