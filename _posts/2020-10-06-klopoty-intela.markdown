@@ -30,8 +30,7 @@ Jako przykład możemy przeanalizować produkcję smartfona (również w dużym 
 
 - Integration - to jest firma która fizycznie składa produkt. Dostaje od podwykonawców osobno PCB, chipy, SoCi etc. i integruje je razem w gotowy produkt. Chyba najlepszym znanym przykładem takiej firmy jest Foxconn.
 
-- Design - to jest firma projektująca konkretny element e.g. procesor, pamięć aparat fotograficzny, SoC np. MediaTek projektuje procesory do telefonów komórkowych.\
-    > Oczywiście projektowaniem zajmuje się też w jakimś zakresie Xiaomi dlatego często wyróżnia się high-level design (całego systemu) i low-level design.
+- Design - to jest firma projektująca konkretny element e.g. procesor, pamięć aparat fotograficzny, SoC np. MediaTek projektuje procesory do telefonów komórkowych. Oczywiście projektowaniem zajmuje się też w jakimś zakresie Xiaomi dlatego często wyróżnia się high-level design (całego systemu) i low-level design.
 
 - IP Provider - MediaTek może korzystać z “frameworków” by przyspieszyć pracę, poprawić jakość (specjalizacje podwykonawców) czy zachować zgodność z pewnym standardem np. może wykupić od firmy ARM licencję na wykorzystanie ich ISA przez co na przykład uzyskuje dostęp do całego ekosystemu oprogramowania - kompilatory, biblioteki systemy operacyjne etc.
 
