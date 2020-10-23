@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[ENG] Presentation from Confidence 2020 - You can also design and test your hardware trojan! Exploiting a CPU Backdoor for x86 Architecture."
+title:  "[ENG] Exploiting a CPU Backdoor for x86 Architecture."
 date:   2020-09-11 08:38:12 +0200
 categories: jekyll update
 ---
